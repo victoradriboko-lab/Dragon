@@ -121,5 +121,5 @@ const server = http.createServer(async (req, res) => {
     json(res,error.status || 500,{ error:error.status ? error.message : 'Não foi possível concluir a operação.' });
   }
 });
-server.listen(Number(process.env.PORT || 3000),process.env.DRAGON_HOST || '127.0.0.1',()=>console.log(`Dragon disponível na porta ${process.env.PORT || 3000}.`));
+server.listen(Number(process.env.PORT || 3080),process.env.DRAGON_HOST || '127.0.0.1',()=>console.log(`Dragon disponível na porta ${process.env.PORT || 3080}.`));
 for (const signal of ['SIGINT','SIGTERM']) process.on(signal,()=>server.close(()=>{ db.close();process.exit(0); }));
