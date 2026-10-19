@@ -1,0 +1,3602 @@
+{
+  "reviewed_at": "2026-10-19",
+  "baseline": "Dragon 0.2; consulta ao código local e funcionalidades enviadas ao GitHub",
+  "requirements": [
+    {
+      "id": "UX-001",
+      "module": "Interface e relatórios comuns",
+      "function": "Menu lateral e grupos de navegação",
+      "status": "existente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3291",
+        "PW-3199",
+        "PW-3273",
+        "PW-4097"
+      ],
+      "acceptance": "Abrir módulos e submenus com teclado e mouse.",
+      "note": "public/index.html; public/app.js; public/styles.css."
+    },
+    {
+      "id": "UX-002",
+      "module": "Interface e relatórios comuns",
+      "function": "Busca nas listas",
+      "status": "parcial",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3291",
+        "PW-3199",
+        "PW-3273",
+        "PW-4097"
+      ],
+      "acceptance": "Buscar nos campos visíveis sem perder o filtro por cliente.",
+      "note": "Hoje disponível em clientes e impressoras."
+    },
+    {
+      "id": "UX-003",
+      "module": "Interface e relatórios comuns",
+      "function": "Seleção, ordenação e paginação de tabelas",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3291",
+        "PW-3199",
+        "PW-3273",
+        "PW-4097"
+      ],
+      "acceptance": "Ordenar e paginar sem omitir registros.",
+      "note": ""
+    },
+    {
+      "id": "UX-004",
+      "module": "Interface e relatórios comuns",
+      "function": "Preferências de colunas por usuário",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3291",
+        "PW-3199",
+        "PW-3273",
+        "PW-4097"
+      ],
+      "acceptance": "Preservar seleção e ordem das colunas após novo login.",
+      "note": ""
+    },
+    {
+      "id": "UX-005",
+      "module": "Interface e relatórios comuns",
+      "function": "Exportação Excel conforme filtros",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3291",
+        "PW-3199",
+        "PW-3273",
+        "PW-4097"
+      ],
+      "acceptance": "Exportar somente os registros e colunas da consulta.",
+      "note": ""
+    },
+    {
+      "id": "UX-006",
+      "module": "Interface e relatórios comuns",
+      "function": "Ocultar e consultar registros inativos",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3291",
+        "PW-3199",
+        "PW-3273",
+        "PW-4097"
+      ],
+      "acceptance": "Exibir histórico sem reativar registros.",
+      "note": ""
+    },
+    {
+      "id": "UX-007",
+      "module": "Interface e relatórios comuns",
+      "function": "Atalhos entre cliente, equipamento e contrato",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3291",
+        "PW-3199",
+        "PW-3273",
+        "PW-4097"
+      ],
+      "acceptance": "Abrir registro correto com autorização verificada.",
+      "note": ""
+    },
+    {
+      "id": "UX-008",
+      "module": "Interface e relatórios comuns",
+      "function": "Ajuda contextual e acessibilidade",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3291",
+        "PW-3199",
+        "PW-3273",
+        "PW-4097"
+      ],
+      "acceptance": "Operar formulários com teclado e mensagens legíveis.",
+      "note": ""
+    },
+    {
+      "id": "UX-009",
+      "module": "Interface e relatórios comuns",
+      "function": "Gráficos com séries selecionáveis",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3291",
+        "PW-3199",
+        "PW-3273",
+        "PW-4097"
+      ],
+      "acceptance": "Alternar séries mantendo valores e legendas consistentes.",
+      "note": ""
+    },
+    {
+      "id": "UX-010",
+      "module": "Interface e relatórios comuns",
+      "function": "Preferências de títulos e colunas dos relatórios",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3291",
+        "PW-3199",
+        "PW-3273",
+        "PW-4097"
+      ],
+      "acceptance": "Aplicar configuração nas impressões e exportações.",
+      "note": ""
+    },
+    {
+      "id": "CLI-001",
+      "module": "Clientes e locais",
+      "function": "Cadastro básico de clientes",
+      "status": "existente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3390",
+        "PW-2823"
+      ],
+      "acceptance": "Criar, editar, buscar e excluir respeitando vínculos.",
+      "note": "server.mjs; public/app.js; testes de integração."
+    },
+    {
+      "id": "CLI-002",
+      "module": "Clientes e locais",
+      "function": "Código externo para integração",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3390",
+        "PW-2823"
+      ],
+      "acceptance": "Impedir associações ambíguas na importação.",
+      "note": ""
+    },
+    {
+      "id": "CLI-003",
+      "module": "Clientes e locais",
+      "function": "Razão social, nome comercial e documento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3390",
+        "PW-2823"
+      ],
+      "acceptance": "Validar obrigatoriedade e formato sem confundir os identificadores.",
+      "note": ""
+    },
+    {
+      "id": "CLI-004",
+      "module": "Clientes e locais",
+      "function": "Matriz e filiais com endereços",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3390",
+        "PW-2823"
+      ],
+      "acceptance": "Vincular local ao cliente e preservar seus equipamentos.",
+      "note": ""
+    },
+    {
+      "id": "CLI-005",
+      "module": "Clientes e locais",
+      "function": "Departamentos por local",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3390",
+        "PW-2823"
+      ],
+      "acceptance": "Selecionar somente departamentos do endereço escolhido.",
+      "note": ""
+    },
+    {
+      "id": "CLI-006",
+      "module": "Clientes e locais",
+      "function": "Centros de custo",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3390",
+        "PW-2823"
+      ],
+      "acceptance": "Filtrar equipamentos e relatórios pelo centro cadastrado.",
+      "note": ""
+    },
+    {
+      "id": "CLI-007",
+      "module": "Clientes e locais",
+      "function": "Configurações de módulos por cliente",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3390",
+        "PW-2823"
+      ],
+      "acceptance": "Aplicar mudanças sem eliminar histórico existente.",
+      "note": ""
+    },
+    {
+      "id": "CLI-008",
+      "module": "Clientes e locais",
+      "function": "Horários úteis e SLA do cliente",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3390",
+        "PW-2823"
+      ],
+      "acceptance": "Calcular prazo pelo calendário configurado.",
+      "note": ""
+    },
+    {
+      "id": "CLI-009",
+      "module": "Clientes e locais",
+      "function": "Chave de instalação vinculada ao cliente",
+      "status": "parcial",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3390",
+        "PW-2823"
+      ],
+      "acceptance": "Associar agente ao cliente sem aceitar troca arbitrária no relatório.",
+      "note": "Hoje cada coletor tem token próprio, vinculado ao cliente; chave de inscrição do cliente é diferente de token operacional."
+    },
+    {
+      "id": "USR-001",
+      "module": "Usuários e permissões",
+      "function": "Login administrativo",
+      "status": "existente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3249"
+      ],
+      "acceptance": "Autenticar, expirar sessão e encerrar acesso.",
+      "note": "server.mjs; testes de autenticação e CSRF."
+    },
+    {
+      "id": "USR-002",
+      "module": "Usuários e permissões",
+      "function": "Cadastro de colaboradores",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3249"
+      ],
+      "acceptance": "Criar, editar e desativar contas internas.",
+      "note": ""
+    },
+    {
+      "id": "USR-003",
+      "module": "Usuários e permissões",
+      "function": "Contas de clientes",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3249"
+      ],
+      "acceptance": "Restringir consultas e ações aos dados autorizados.",
+      "note": ""
+    },
+    {
+      "id": "USR-004",
+      "module": "Usuários e permissões",
+      "function": "Permissões por módulo e operação",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3249"
+      ],
+      "acceptance": "Negar operações também na API.",
+      "note": ""
+    },
+    {
+      "id": "USR-005",
+      "module": "Usuários e permissões",
+      "function": "Escopo por cliente, local e unidade da empresa",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3249"
+      ],
+      "acceptance": "Impedir acesso cruzado mesmo alterando identificadores.",
+      "note": ""
+    },
+    {
+      "id": "USR-006",
+      "module": "Usuários e permissões",
+      "function": "Convite e definição inicial de senha",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3249"
+      ],
+      "acceptance": "Consumir convite temporário uma única vez.",
+      "note": ""
+    },
+    {
+      "id": "USR-007",
+      "module": "Usuários e permissões",
+      "function": "Recuperação e alteração de senha",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3249"
+      ],
+      "acceptance": "Invalidar token usado e sessões conforme política.",
+      "note": ""
+    },
+    {
+      "id": "USR-008",
+      "module": "Usuários e permissões",
+      "function": "Preferências pessoais de notificações",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3249"
+      ],
+      "acceptance": "Aplicar preferências ao destinatário correto.",
+      "note": ""
+    },
+    {
+      "id": "EMP-001",
+      "module": "Empresa e preferências",
+      "function": "Cadastro da empresa e contatos",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3259",
+        "PW-4256"
+      ],
+      "acceptance": "Salvar dados e aplicar em documentos autorizados.",
+      "note": ""
+    },
+    {
+      "id": "EMP-002",
+      "module": "Empresa e preferências",
+      "function": "Logotipo na plataforma e relatórios",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3259",
+        "PW-4256"
+      ],
+      "acceptance": "Validar imagem e apresentar sem distorções.",
+      "note": ""
+    },
+    {
+      "id": "EMP-003",
+      "module": "Empresa e preferências",
+      "function": "Unidades e documentos da prestadora",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3259",
+        "PW-4256"
+      ],
+      "acceptance": "Usar unidade correta no contrato e fechamento.",
+      "note": ""
+    },
+    {
+      "id": "EMP-004",
+      "module": "Empresa e preferências",
+      "function": "Departamentos internos e localização do parque",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3259",
+        "PW-4256"
+      ],
+      "acceptance": "Registrar destino de equipamentos recolhidos.",
+      "note": ""
+    },
+    {
+      "id": "EMP-005",
+      "module": "Empresa e preferências",
+      "function": "Calendário e horários úteis da empresa",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3259",
+        "PW-4256"
+      ],
+      "acceptance": "Tratar intervalos e dias não trabalhados.",
+      "note": ""
+    },
+    {
+      "id": "EMP-006",
+      "module": "Empresa e preferências",
+      "function": "Módulos padrão para novos clientes",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3259",
+        "PW-4256"
+      ],
+      "acceptance": "Não alterar retroativamente clientes existentes.",
+      "note": ""
+    },
+    {
+      "id": "EMP-007",
+      "module": "Empresa e preferências",
+      "function": "Regras gerais de desvinculação contratual",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [
+        "PW-3259",
+        "PW-4256"
+      ],
+      "acceptance": "Não retirar equipamento do contrato silenciosamente.",
+      "note": ""
+    },
+    {
+      "id": "PAR-001",
+      "module": "Parque de impressoras",
+      "function": "Cadastro de impressoras e vínculo ao cliente",
+      "status": "parcial",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Preservar patrimônio, série, modelo e IP.",
+      "note": "Cadastro básico implementado; falta ciclo completo de patrimônio."
+    },
+    {
+      "id": "PAR-002",
+      "module": "Parque de impressoras",
+      "function": "Consulta por cliente",
+      "status": "existente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Exibir somente equipamentos do cliente selecionado.",
+      "note": "public/app.js: printers-by-client."
+    },
+    {
+      "id": "PAR-003",
+      "module": "Parque de impressoras",
+      "function": "Proprietário e situação patrimonial",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Distinguir ativo próprio, do cliente, vendido e descartado.",
+      "note": ""
+    },
+    {
+      "id": "PAR-004",
+      "module": "Parque de impressoras",
+      "function": "Estoque de equipamentos na própria empresa",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Permitir impressora sem instalação ativa em cliente.",
+      "note": ""
+    },
+    {
+      "id": "PAR-005",
+      "module": "Parque de impressoras",
+      "function": "Instalação, retirada e movimentação datadas",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Preservar passagens e seus intervalos.",
+      "note": ""
+    },
+    {
+      "id": "PAR-006",
+      "module": "Parque de impressoras",
+      "function": "Reativação como nova passagem ou continuação",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Aplicar escolha sem misturar contadores de períodos diferentes.",
+      "note": ""
+    },
+    {
+      "id": "PAR-007",
+      "module": "Parque de impressoras",
+      "function": "Histórico de ações e alterações",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Registrar usuário, data e valores alterados.",
+      "note": ""
+    },
+    {
+      "id": "PAR-008",
+      "module": "Parque de impressoras",
+      "function": "Local, departamento, centro de custo e observações",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Aplicar apenas vínculos válidos ao cliente.",
+      "note": ""
+    },
+    {
+      "id": "PAR-009",
+      "module": "Parque de impressoras",
+      "function": "Comentários no equipamento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Preservar autoria e cronologia.",
+      "note": ""
+    },
+    {
+      "id": "PAR-010",
+      "module": "Parque de impressoras",
+      "function": "Descobertas aguardando aprovação",
+      "status": "parcial",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Aprovar equipamento no cliente do coletor.",
+      "note": "collector-api.mjs; falta completar campos e exclusões persistentes."
+    },
+    {
+      "id": "PAR-011",
+      "module": "Parque de impressoras",
+      "function": "Ignorar descoberta em varreduras futuras",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Respeitar exclusão persistente por identidade e cliente.",
+      "note": ""
+    },
+    {
+      "id": "PAR-012",
+      "module": "Parque de impressoras",
+      "function": "Identificação de monitoramentos duplicados",
+      "status": "parcial",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Comparar passagens e encerrar a incorreta com confirmação.",
+      "note": "Hoje detecta mesma série entre coletores/IPs do mesmo cliente; não resolve duplicidade entre clientes."
+    },
+    {
+      "id": "PAR-013",
+      "module": "Parque de impressoras",
+      "function": "Modo backup ou reserva",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Distinguir reserva de falha operacional nas regras de alerta.",
+      "note": ""
+    },
+    {
+      "id": "PAR-014",
+      "module": "Parque de impressoras",
+      "function": "Preferências individuais de alerta e trocas",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Aplicar exceção sem alterar regras dos outros equipamentos.",
+      "note": ""
+    },
+    {
+      "id": "PAR-015",
+      "module": "Parque de impressoras",
+      "function": "SLA específico da impressora",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Herdar local ou aplicar exceção configurada.",
+      "note": ""
+    },
+    {
+      "id": "PAR-016",
+      "module": "Parque de impressoras",
+      "function": "Linha do tempo de suprimentos e peças",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4403",
+        "PW-4439",
+        "PW-3189",
+        "PW-3693",
+        "PW-4430"
+      ],
+      "acceptance": "Relacionar instalação, uso e substituições.",
+      "note": ""
+    },
+    {
+      "id": "AGE-001",
+      "module": "Agente e conectividade",
+      "function": "Identificação SNMP em IPv4 privado",
+      "status": "parcial",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Encontrar equipamentos de teste sem classificar roteadores como impressoras.",
+      "note": "agents/snmp.mjs: SNMP v2c padrão; validar marca e modelo."
+    },
+    {
+      "id": "AGE-002",
+      "module": "Agente e conectividade",
+      "function": "Busca por IP e faixas configuradas",
+      "status": "existente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Restringir varredura aos endereços autorizados.",
+      "note": "agents/agent.mjs: até 4096 IPs privados; CIDR /22 a /32."
+    },
+    {
+      "id": "AGE-003",
+      "module": "Agente e conectividade",
+      "function": "Detecção automática da sub-rede e broadcast",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Apresentar redes e pedir seleção antes de ativar busca.",
+      "note": ""
+    },
+    {
+      "id": "AGE-004",
+      "module": "Agente e conectividade",
+      "function": "Seleção do que monitorar por ponto",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Excluir IPs e manter lista explícita de equipamentos.",
+      "note": ""
+    },
+    {
+      "id": "AGE-005",
+      "module": "Agente e conectividade",
+      "function": "Vínculo autenticado por cliente e coletor",
+      "status": "existente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Rejeitar token inválido e credencial revogada.",
+      "note": "collector-api.mjs; token operacional vinculado a um cliente."
+    },
+    {
+      "id": "AGE-006",
+      "module": "Agente e conectividade",
+      "function": "Pré-cadastro remoto de impressora e IP",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Receber instrução e confirmar identificação antes de vincular.",
+      "note": ""
+    },
+    {
+      "id": "AGE-007",
+      "module": "Agente e conectividade",
+      "function": "Monitoramento USB no Windows",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Validar identificação e contadores no PC fisicamente conectado.",
+      "note": ""
+    },
+    {
+      "id": "AGE-008",
+      "module": "Agente e conectividade",
+      "function": "Perfis de credenciais SNMP e HTTP por equipamento",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Aplicar credencial correta sem expor segredo em relatório.",
+      "note": ""
+    },
+    {
+      "id": "AGE-009",
+      "module": "Agente e conectividade",
+      "function": "Instalação e remoção do agente",
+      "status": "parcial",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Instalar, reiniciar e remover em Windows de teste.",
+      "note": "windows/*.ps1: tarefa agendada; ainda sem piloto real ou MSI."
+    },
+    {
+      "id": "AGE-010",
+      "module": "Agente e conectividade",
+      "function": "Fila persistente e reenvio autenticado",
+      "status": "existente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Preservar lote recusado e evitar duplicação no reenvio.",
+      "note": "agents/agent.mjs; collector-api.mjs; testes de fila e idempotência."
+    },
+    {
+      "id": "AGE-011",
+      "module": "Agente e conectividade",
+      "function": "Configuração e teste de proxy",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Validar acesso pelo proxy autorizado do cliente.",
+      "note": ""
+    },
+    {
+      "id": "AGE-012",
+      "module": "Agente e conectividade",
+      "function": "Transporte por e-mail para ambiente restrito",
+      "status": "opcional",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Avaliar necessidade e entrega confiável antes de implementar.",
+      "note": "HTTPS/VPN é a preferência do Dragon local."
+    },
+    {
+      "id": "AGE-013",
+      "module": "Agente e conectividade",
+      "function": "Diagnóstico do ponto e dos equipamentos",
+      "status": "parcial",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Distinguir data de coleta de data de recebimento.",
+      "note": "Hoje há hostname, versão e últimas datas; faltam causas e testes de diagnóstico."
+    },
+    {
+      "id": "AGE-014",
+      "module": "Agente e conectividade",
+      "function": "Persistência e restauração do estado do agente",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Reinstalar sem perder fila nem duplicar equipamentos.",
+      "note": ""
+    },
+    {
+      "id": "AGE-015",
+      "module": "Agente e conectividade",
+      "function": "Atualização controlada e supervisão do agente",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Verificar versão, integridade e recuperação após falha.",
+      "note": ""
+    },
+    {
+      "id": "AGE-016",
+      "module": "Agente e conectividade",
+      "function": "Compatibilidade homologada por modelo e conexão",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-4375",
+        "PW-4387",
+        "PW-4396",
+        "PW-3261",
+        "PW-4052",
+        "PW-3336",
+        "PW-2841",
+        "PW-3263",
+        "PW-4012",
+        "PW-4455"
+      ],
+      "acceptance": "Registrar capacidades verificadas e evidências de teste.",
+      "note": "A lista da PrintWayy não comprova compatibilidade com nosso agente."
+    },
+    {
+      "id": "CNT-001",
+      "module": "Contadores e histórico",
+      "function": "Contador total e data da leitura",
+      "status": "parcial",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1",
+        "AGE",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3186",
+        "PW-4448",
+        "PW-2850",
+        "PW-4455"
+      ],
+      "acceptance": "Exibir unidade e origem corretas sem inventar valores.",
+      "note": "Somente marcador padrão em impressões; histórico de últimas 100 leituras por descoberta."
+    },
+    {
+      "id": "CNT-002",
+      "module": "Contadores e histórico",
+      "function": "Contadores P&B, cor, cópia e digitalização",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1",
+        "AGE",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3186",
+        "PW-4448",
+        "PW-2850",
+        "PW-4455"
+      ],
+      "acceptance": "Validar significado por fabricante e modelo.",
+      "note": ""
+    },
+    {
+      "id": "CNT-003",
+      "module": "Contadores e histórico",
+      "function": "Lançamento manual datado",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1",
+        "AGE",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3186",
+        "PW-4448",
+        "PW-2850",
+        "PW-4455"
+      ],
+      "acceptance": "Exigir cliente, equipamento, origem e coerência temporal.",
+      "note": ""
+    },
+    {
+      "id": "CNT-004",
+      "module": "Contadores e histórico",
+      "function": "Edição e exclusão de leituras manuais",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1",
+        "AGE",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3186",
+        "PW-4448",
+        "PW-2850",
+        "PW-4455"
+      ],
+      "acceptance": "Respeitar sequência, prazo e vínculo com fechamento congelado.",
+      "note": ""
+    },
+    {
+      "id": "CNT-005",
+      "module": "Contadores e histórico",
+      "function": "Tratamento de reset e troca de placa",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1",
+        "AGE",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3186",
+        "PW-4448",
+        "PW-2850",
+        "PW-4455"
+      ],
+      "acceptance": "Não gerar consumo negativo nem juntar equipamentos distintos.",
+      "note": ""
+    },
+    {
+      "id": "CNT-006",
+      "module": "Contadores e histórico",
+      "function": "Produção diária, mensal e por período",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1",
+        "AGE",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3186",
+        "PW-4448",
+        "PW-2850",
+        "PW-4455"
+      ],
+      "acceptance": "Calcular diferenças com leituras de fronteira identificadas.",
+      "note": ""
+    },
+    {
+      "id": "CNT-007",
+      "module": "Contadores e histórico",
+      "function": "Limites de período e leitura ausente",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1",
+        "AGE",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3186",
+        "PW-4448",
+        "PW-2850",
+        "PW-4455"
+      ],
+      "acceptance": "Informar lacunas sem fabricar contadores.",
+      "note": ""
+    },
+    {
+      "id": "CNT-008",
+      "module": "Contadores e histórico",
+      "function": "Separação de passagem e cliente no histórico",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1",
+        "AGE",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3186",
+        "PW-4448",
+        "PW-2850",
+        "PW-4455"
+      ],
+      "acceptance": "Não atribuir produção antiga ao novo cliente.",
+      "note": ""
+    },
+    {
+      "id": "CNT-009",
+      "module": "Contadores e histórico",
+      "function": "Interpretação de A3 e contadores por cor",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F2",
+      "dependencies": [
+        "F1",
+        "AGE",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3186",
+        "PW-4448",
+        "PW-2850",
+        "PW-4455"
+      ],
+      "acceptance": "Homologar regra por modelo, evitando dupla contagem.",
+      "note": "A FAQ não promete cobrança separada A3/A4; não assumir equivalência universal."
+    },
+    {
+      "id": "DIS-001",
+      "module": "Dispositivos de TI",
+      "function": "Cadastro de ativos além de impressoras",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-4697",
+        "PW-4721"
+      ],
+      "acceptance": "Salvar tipo, fabricante, modelo, série e patrimônio.",
+      "note": ""
+    },
+    {
+      "id": "DIS-002",
+      "module": "Dispositivos de TI",
+      "function": "Catálogo de tipos, fabricantes e modelos",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-4697",
+        "PW-4721"
+      ],
+      "acceptance": "Impedir exclusão de cadastro em uso.",
+      "note": ""
+    },
+    {
+      "id": "DIS-003",
+      "module": "Dispositivos de TI",
+      "function": "IP, MAC, localização e manutenção",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-4697",
+        "PW-4721"
+      ],
+      "acceptance": "Preservar dados e condição do ativo.",
+      "note": ""
+    },
+    {
+      "id": "DIS-004",
+      "module": "Dispositivos de TI",
+      "function": "Movimentação, comentários e histórico",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-4697",
+        "PW-4721"
+      ],
+      "acceptance": "Registrar passagens sem apagar o vínculo anterior.",
+      "note": ""
+    },
+    {
+      "id": "DIS-005",
+      "module": "Dispositivos de TI",
+      "function": "Vinculação de dispositivos aos contratos",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-4697",
+        "PW-4721"
+      ],
+      "acceptance": "Selecionar somente ativos do mesmo cliente.",
+      "note": ""
+    },
+    {
+      "id": "DIS-006",
+      "module": "Dispositivos de TI",
+      "function": "Listagem customizável e exportação",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-4697",
+        "PW-4721"
+      ],
+      "acceptance": "Respeitar filtros e permissões.",
+      "note": ""
+    },
+    {
+      "id": "CON-001",
+      "module": "Contratos e preços",
+      "function": "Contrato, vigência e ciclo de faturamento",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Gerar períodos sem sobreposição ou dias perdidos.",
+      "note": ""
+    },
+    {
+      "id": "CON-002",
+      "module": "Contratos e preços",
+      "function": "Contrato padrão do cliente",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Aplicar apenas um padrão por cliente.",
+      "note": ""
+    },
+    {
+      "id": "CON-003",
+      "module": "Contratos e preços",
+      "function": "CPP por tipo de produção",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Cobrar quantidade pela tarifa correspondente.",
+      "note": ""
+    },
+    {
+      "id": "CON-004",
+      "module": "Contratos e preços",
+      "function": "Franquia individual ou compartilhada com excedente",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Somar apenas itens do agrupamento contratado.",
+      "note": ""
+    },
+    {
+      "id": "CON-005",
+      "module": "Contratos e preços",
+      "function": "Faixas de produção, valor fixo e excedentes",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Validar fronteiras e método de cobrança.",
+      "note": ""
+    },
+    {
+      "id": "CON-006",
+      "module": "Contratos e preços",
+      "function": "Custos padrão, fixos e adicionais",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Aplicar valores do contrato a novos equipamentos.",
+      "note": ""
+    },
+    {
+      "id": "CON-007",
+      "module": "Contratos e preços",
+      "function": "Mensalidade mínima",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Comparar produção com mínimo antes dos adicionais.",
+      "note": ""
+    },
+    {
+      "id": "CON-008",
+      "module": "Contratos e preços",
+      "function": "Vínculos de impressoras e dispositivos",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Validar cliente e avisar ativo em manutenção.",
+      "note": ""
+    },
+    {
+      "id": "CON-009",
+      "module": "Contratos e preços",
+      "function": "Configuração de congelamento e tolerância de comunicação",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Bloquear automático quando houver pendência.",
+      "note": ""
+    },
+    {
+      "id": "CON-010",
+      "module": "Contratos e preços",
+      "function": "Reajuste imediato ou programado",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Simular e registrar percentual e valores alterados.",
+      "note": ""
+    },
+    {
+      "id": "CON-011",
+      "module": "Contratos e preços",
+      "function": "Histórico do reajuste e impacto em períodos abertos",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "F1",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3193",
+        "PW-4807"
+      ],
+      "acceptance": "Preservar fechamentos já congelados.",
+      "note": ""
+    },
+    {
+      "id": "FEC-001",
+      "module": "Fechamentos mensais",
+      "function": "Listagem mensal e totais filtrados",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Reconciliar resumo com itens exibidos.",
+      "note": ""
+    },
+    {
+      "id": "FEC-002",
+      "module": "Fechamentos mensais",
+      "function": "Estados em andamento, processado e congelado",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Controlar transições e permissões.",
+      "note": ""
+    },
+    {
+      "id": "FEC-003",
+      "module": "Fechamentos mensais",
+      "function": "Detalhamento de produção e custos",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Reproduzir valor final com os itens registrados.",
+      "note": ""
+    },
+    {
+      "id": "FEC-004",
+      "module": "Fechamentos mensais",
+      "function": "Validação de pendências antes de congelar",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Identificar custo, vínculo, leitura ou comunicação ausente.",
+      "note": ""
+    },
+    {
+      "id": "FEC-005",
+      "module": "Fechamentos mensais",
+      "function": "Cobrança proporcional de passagem parcial",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Mostrar período e opção integral ou proporcional.",
+      "note": ""
+    },
+    {
+      "id": "FEC-006",
+      "module": "Fechamentos mensais",
+      "function": "Acréscimos, descontos e observações",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Registrar motivo, valor e autoria.",
+      "note": ""
+    },
+    {
+      "id": "FEC-007",
+      "module": "Fechamentos mensais",
+      "function": "Congelamento manual e automático",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Gravar snapshot imutável de leituras e preços.",
+      "note": ""
+    },
+    {
+      "id": "FEC-008",
+      "module": "Fechamentos mensais",
+      "function": "Descongelamento controlado",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Restringir ao período elegível e auditar mudança.",
+      "note": ""
+    },
+    {
+      "id": "FEC-009",
+      "module": "Fechamentos mensais",
+      "function": "Encerramento antecipado e saldo de dias",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Não cobrar duas vezes o mesmo intervalo.",
+      "note": ""
+    },
+    {
+      "id": "FEC-010",
+      "module": "Fechamentos mensais",
+      "function": "Número do documento e relatório personalizável",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Impedir edição após congelamento.",
+      "note": ""
+    },
+    {
+      "id": "FEC-011",
+      "module": "Fechamentos mensais",
+      "function": "Envio do fechamento ao congelar",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F3",
+      "dependencies": [
+        "CON",
+        "CNT"
+      ],
+      "sources": [
+        "PW-3197",
+        "PW-4235",
+        "PW-3199",
+        "PW-4455"
+      ],
+      "acceptance": "Evitar e-mail duplicado em novas tentativas.",
+      "note": ""
+    },
+    {
+      "id": "EST-001",
+      "module": "Estoque e materiais",
+      "function": "Cadastro de itens, códigos, cor e vida útil",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3233",
+        "PW-4275",
+        "PW-3255"
+      ],
+      "acceptance": "Validar dados e rendimento por item.",
+      "note": ""
+    },
+    {
+      "id": "EST-002",
+      "module": "Estoque e materiais",
+      "function": "Compatibilidade por modelo e rendimento específico",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3233",
+        "PW-4275",
+        "PW-3255"
+      ],
+      "acceptance": "Não sugerir item incompatível.",
+      "note": ""
+    },
+    {
+      "id": "EST-003",
+      "module": "Estoque e materiais",
+      "function": "Tipos, marcas e fornecedores",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3233",
+        "PW-4275",
+        "PW-3255"
+      ],
+      "acceptance": "Impedir exclusão quando referenciados.",
+      "note": ""
+    },
+    {
+      "id": "EST-004",
+      "module": "Estoque e materiais",
+      "function": "Preço de venda usado no atendimento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3233",
+        "PW-4275",
+        "PW-3255"
+      ],
+      "acceptance": "Preservar valor aplicado ao chamado.",
+      "note": ""
+    },
+    {
+      "id": "EST-005",
+      "module": "Estoque e materiais",
+      "function": "Entrada individual ou múltipla com documento e fornecedor",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3233",
+        "PW-4275",
+        "PW-3255"
+      ],
+      "acceptance": "Conciliar quantidade recebida com saldo.",
+      "note": ""
+    },
+    {
+      "id": "EST-006",
+      "module": "Estoque e materiais",
+      "function": "Saldos por empresa, técnico, cliente e local",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3233",
+        "PW-4275",
+        "PW-3255"
+      ],
+      "acceptance": "Reconciliar razão de estoque e posição atual.",
+      "note": ""
+    },
+    {
+      "id": "EST-007",
+      "module": "Estoque e materiais",
+      "function": "Transferência entre detentores",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3233",
+        "PW-4275",
+        "PW-3255"
+      ],
+      "acceptance": "Debitar e creditar na mesma transação.",
+      "note": ""
+    },
+    {
+      "id": "EST-008",
+      "module": "Estoque e materiais",
+      "function": "Devolução ao estoque da empresa",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3233",
+        "PW-4275",
+        "PW-3255"
+      ],
+      "acceptance": "Preservar origem e rastreabilidade.",
+      "note": ""
+    },
+    {
+      "id": "EST-009",
+      "module": "Estoque e materiais",
+      "function": "Vínculo da retirada à troca ou chamado",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "F1",
+        "PAR"
+      ],
+      "sources": [
+        "PW-3233",
+        "PW-4275",
+        "PW-3255"
+      ],
+      "acceptance": "Impedir baixa duplicada e saldo negativo.",
+      "note": ""
+    },
+    {
+      "id": "SUP-001",
+      "module": "Suprimentos e reposição",
+      "function": "Níveis reportados e desconhecidos",
+      "status": "parcial",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Preservar nível, capacidade, unidade e data da leitura.",
+      "note": "Já disponível com dados SNMP padrão; sem filtros salvos nem previsão."
+    },
+    {
+      "id": "SUP-002",
+      "module": "Suprimentos e reposição",
+      "function": "Consultas avançadas salvas e temporárias",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Persistir campos, ordenação e condições por usuário.",
+      "note": ""
+    },
+    {
+      "id": "SUP-003",
+      "module": "Suprimentos e reposição",
+      "function": "Tipos de suprimentos monitorados por equipamento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Aplicar exceções e configuração do cliente.",
+      "note": ""
+    },
+    {
+      "id": "SUP-004",
+      "module": "Suprimentos e reposição",
+      "function": "Sugestão de troca por alteração de nível, capacidade ou série",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Registrar indício sem declarar troca confirmada.",
+      "note": ""
+    },
+    {
+      "id": "SUP-005",
+      "module": "Suprimentos e reposição",
+      "function": "Troca manual e confirmação pendente",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Validar permissão e informar origem do material.",
+      "note": ""
+    },
+    {
+      "id": "SUP-006",
+      "module": "Suprimentos e reposição",
+      "function": "Trocas confirmadas, descartadas e exclusão",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Preservar auditoria e corrigir efeito no estoque.",
+      "note": ""
+    },
+    {
+      "id": "SUP-007",
+      "module": "Suprimentos e reposição",
+      "function": "Confirmação automática por estoque compatível",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Tratar ambiguidade sem escolher item arbitrário.",
+      "note": ""
+    },
+    {
+      "id": "SUP-008",
+      "module": "Suprimentos e reposição",
+      "function": "Linha do tempo e exclusão de dados das médias",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Recalcular indicadores sem perder evidência.",
+      "note": ""
+    },
+    {
+      "id": "SUP-009",
+      "module": "Suprimentos e reposição",
+      "function": "Trocas prematuras e janelas de análise",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Aplicar limite configurado e tipo de item.",
+      "note": ""
+    },
+    {
+      "id": "SUP-010",
+      "module": "Suprimentos e reposição",
+      "function": "Médias de rendimento, eficiência e cobertura",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Expor amostra e fórmula utilizada.",
+      "note": ""
+    },
+    {
+      "id": "SUP-011",
+      "module": "Suprimentos e reposição",
+      "function": "Estimativa de nível e data de substituição",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Exigir histórico suficiente e informar incerteza.",
+      "note": ""
+    },
+    {
+      "id": "SUP-012",
+      "module": "Suprimentos e reposição",
+      "function": "Reposição por período e estoque de segurança",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Calcular proposta sem movimentar estoque antes da confirmação.",
+      "note": ""
+    },
+    {
+      "id": "SUP-013",
+      "module": "Suprimentos e reposição",
+      "function": "Programação, envio e recebimento da reposição",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Debitar na saída e creditar no recebimento.",
+      "note": ""
+    },
+    {
+      "id": "SUP-014",
+      "module": "Suprimentos e reposição",
+      "function": "Recebimento pelo usuário do cliente",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Restringir cliente, local e itens autorizados.",
+      "note": ""
+    },
+    {
+      "id": "SUP-015",
+      "module": "Suprimentos e reposição",
+      "function": "Validação de dados anômalos nas trocas",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F5",
+      "dependencies": [
+        "EST",
+        "CNT",
+        "USR"
+      ],
+      "sources": [
+        "PW-3215",
+        "PW-4324",
+        "PW-3229",
+        "PW-3255",
+        "PW-3227"
+      ],
+      "acceptance": "Excluir leitura inválida da previsão e registrar motivo.",
+      "note": "A fonte menciona IA, mas não publica algoritmo; implementação independente a especificar."
+    },
+    {
+      "id": "ALE-001",
+      "module": "Alertas e manutenção",
+      "function": "Falha de comunicação de impressora e agente",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "AGE",
+        "CNT",
+        "F1"
+      ],
+      "sources": [
+        "PW-3299",
+        "PW-3253",
+        "PW-4430",
+        "PW-3261"
+      ],
+      "acceptance": "Separar ausência de leitura de falha do coletor.",
+      "note": ""
+    },
+    {
+      "id": "ALE-002",
+      "module": "Alertas e manutenção",
+      "function": "Tolerância em horas corridas ou úteis",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "AGE",
+        "CNT",
+        "F1"
+      ],
+      "sources": [
+        "PW-3299",
+        "PW-3253",
+        "PW-4430",
+        "PW-3261"
+      ],
+      "acceptance": "Respeitar calendário e equipamentos reserva.",
+      "note": ""
+    },
+    {
+      "id": "ALE-003",
+      "module": "Alertas e manutenção",
+      "function": "Eventos emitidos pelo equipamento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "AGE",
+        "CNT",
+        "F1"
+      ],
+      "sources": [
+        "PW-3299",
+        "PW-3253",
+        "PW-4430",
+        "PW-3261"
+      ],
+      "acceptance": "Mapear códigos sem confundir nível baixo com erro genérico.",
+      "note": ""
+    },
+    {
+      "id": "ALE-004",
+      "module": "Alertas e manutenção",
+      "function": "Manutenção por dias, páginas ou suprimento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "AGE",
+        "CNT",
+        "F1"
+      ],
+      "sources": [
+        "PW-3299",
+        "PW-3253",
+        "PW-4430",
+        "PW-3261"
+      ],
+      "acceptance": "Aplicar condição ao conjunto correto de equipamentos.",
+      "note": ""
+    },
+    {
+      "id": "ALE-005",
+      "module": "Alertas e manutenção",
+      "function": "Escopo por cliente, fabricante, modelo e exceção",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "AGE",
+        "CNT",
+        "F1"
+      ],
+      "sources": [
+        "PW-3299",
+        "PW-3253",
+        "PW-4430",
+        "PW-3261"
+      ],
+      "acceptance": "Incluir novos equipamentos elegíveis.",
+      "note": ""
+    },
+    {
+      "id": "ALE-006",
+      "module": "Alertas e manutenção",
+      "function": "Criticidade e habilitação por tipo",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "AGE",
+        "CNT",
+        "F1"
+      ],
+      "sources": [
+        "PW-3299",
+        "PW-3253",
+        "PW-4430",
+        "PW-3261"
+      ],
+      "acceptance": "Aplicar preferência e permissão.",
+      "note": ""
+    },
+    {
+      "id": "ALE-007",
+      "module": "Alertas e manutenção",
+      "function": "Estados ativos, ignorados, encerrados e em chamado",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "AGE",
+        "CNT",
+        "F1"
+      ],
+      "sources": [
+        "PW-3299",
+        "PW-3253",
+        "PW-4430",
+        "PW-3261"
+      ],
+      "acceptance": "Manter histórico de ação e recorrência.",
+      "note": ""
+    },
+    {
+      "id": "ALE-008",
+      "module": "Alertas e manutenção",
+      "function": "Estabilidade antes de encerrar falha",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "AGE",
+        "CNT",
+        "F1"
+      ],
+      "sources": [
+        "PW-3299",
+        "PW-3253",
+        "PW-4430",
+        "PW-3261"
+      ],
+      "acceptance": "Exigir sequência configurada de comunicações bem-sucedidas.",
+      "note": ""
+    },
+    {
+      "id": "ALE-009",
+      "module": "Alertas e manutenção",
+      "function": "Encerramento com data da manutenção",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "AGE",
+        "CNT",
+        "F1"
+      ],
+      "sources": [
+        "PW-3299",
+        "PW-3253",
+        "PW-4430",
+        "PW-3261"
+      ],
+      "acceptance": "Reiniciar referência conforme política da regra.",
+      "note": ""
+    },
+    {
+      "id": "ALE-010",
+      "module": "Alertas e manutenção",
+      "function": "Abrir chamado a partir de alerta",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "AGE",
+        "CNT",
+        "F1"
+      ],
+      "sources": [
+        "PW-3299",
+        "PW-3253",
+        "PW-4430",
+        "PW-3261"
+      ],
+      "acceptance": "Vincular equipamentos e concluir ações relacionadas.",
+      "note": ""
+    },
+    {
+      "id": "CHA-001",
+      "module": "Chamados e assistência",
+      "function": "Abertura por colaborador e cliente",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Autorizar cliente e equipamentos selecionados.",
+      "note": ""
+    },
+    {
+      "id": "CHA-002",
+      "module": "Chamados e assistência",
+      "function": "Chamado interno, impressora ou dispositivo",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Permitir contexto apropriado e múltiplos ativos.",
+      "note": ""
+    },
+    {
+      "id": "CHA-003",
+      "module": "Chamados e assistência",
+      "function": "Triagem sem responsável e distribuição",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Atribuir técnico e preservar alterações.",
+      "note": ""
+    },
+    {
+      "id": "CHA-004",
+      "module": "Chamados e assistência",
+      "function": "Quadro pendente, em execução e finalizado",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Controlar situação e prioridade.",
+      "note": ""
+    },
+    {
+      "id": "CHA-005",
+      "module": "Chamados e assistência",
+      "function": "Comentários internos e públicos",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Impedir exposição de comentário interno ao cliente.",
+      "note": ""
+    },
+    {
+      "id": "CHA-006",
+      "module": "Chamados e assistência",
+      "function": "Serviços, peças e custos adicionais",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Calcular atendimento e movimentar materiais uma única vez.",
+      "note": ""
+    },
+    {
+      "id": "CHA-007",
+      "module": "Chamados e assistência",
+      "function": "Associação de alertas ao atendimento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Encerrar ou ignorar conforme natureza do alerta.",
+      "note": ""
+    },
+    {
+      "id": "CHA-008",
+      "module": "Chamados e assistência",
+      "function": "Desconto, pagamento e encerramento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Validar confirmação de materiais e valores.",
+      "note": ""
+    },
+    {
+      "id": "CHA-009",
+      "module": "Chamados e assistência",
+      "function": "Histórico e impressão do atendimento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Registrar autoria e opções de linhas manuais.",
+      "note": ""
+    },
+    {
+      "id": "CHA-010",
+      "module": "Chamados e assistência",
+      "function": "Cadastro de tipos e serviços",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Expor ao cliente somente opções permitidas.",
+      "note": ""
+    },
+    {
+      "id": "CHA-011",
+      "module": "Chamados e assistência",
+      "function": "SLA por cliente, filial e equipamento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Aplicar herança e calendário correto.",
+      "note": ""
+    },
+    {
+      "id": "CHA-012",
+      "module": "Chamados e assistência",
+      "function": "Relatórios customizados salvos",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F4",
+      "dependencies": [
+        "USR",
+        "PAR",
+        "ALE"
+      ],
+      "sources": [
+        "PW-4122",
+        "PW-4136",
+        "PW-3843",
+        "PW-3257"
+      ],
+      "acceptance": "Filtrar e ordenar campos autorizados.",
+      "note": ""
+    },
+    {
+      "id": "REL-001",
+      "module": "Relatórios e notificações",
+      "function": "Impressões e cópias por equipamento e período",
+      "status": "parcial",
+      "priority": "P1",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CNT",
+        "CON",
+        "FEC",
+        "SUP",
+        "CHA"
+      ],
+      "sources": [
+        "PW-4448",
+        "PW-4524",
+        "PW-4526",
+        "PW-3199",
+        "PW-4235"
+      ],
+      "acceptance": "Mostrar diferença entre leituras e fronteiras do período.",
+      "note": "Hoje há apenas última leitura e histórico total; não há relatório completo por período."
+    },
+    {
+      "id": "REL-002",
+      "module": "Relatórios e notificações",
+      "function": "Digitalizações por equipamento",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CNT",
+        "CON",
+        "FEC",
+        "SUP",
+        "CHA"
+      ],
+      "sources": [
+        "PW-4448",
+        "PW-4524",
+        "PW-4526",
+        "PW-3199",
+        "PW-4235"
+      ],
+      "acceptance": "Usar contador homologado e datas verificáveis.",
+      "note": ""
+    },
+    {
+      "id": "REL-003",
+      "module": "Relatórios e notificações",
+      "function": "Totais por cliente e contrato",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CNT",
+        "CON",
+        "FEC",
+        "SUP",
+        "CHA"
+      ],
+      "sources": [
+        "PW-4448",
+        "PW-4524",
+        "PW-4526",
+        "PW-3199",
+        "PW-4235"
+      ],
+      "acceptance": "Reconciliar agrupamentos sem duplicar produção.",
+      "note": ""
+    },
+    {
+      "id": "REL-004",
+      "module": "Relatórios e notificações",
+      "function": "Agrupamento por local, departamento e centro de custo",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CNT",
+        "CON",
+        "FEC",
+        "SUP",
+        "CHA"
+      ],
+      "sources": [
+        "PW-4448",
+        "PW-4524",
+        "PW-4526",
+        "PW-3199",
+        "PW-4235"
+      ],
+      "acceptance": "Usar passagem válida na data da produção.",
+      "note": ""
+    },
+    {
+      "id": "REL-005",
+      "module": "Relatórios e notificações",
+      "function": "Gráficos de produção diária e mensal",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CNT",
+        "CON",
+        "FEC",
+        "SUP",
+        "CHA"
+      ],
+      "sources": [
+        "PW-4448",
+        "PW-4524",
+        "PW-4526",
+        "PW-3199",
+        "PW-4235"
+      ],
+      "acceptance": "Reconciliar gráfico, tabela e exportação.",
+      "note": ""
+    },
+    {
+      "id": "REL-006",
+      "module": "Relatórios e notificações",
+      "function": "Agendamento mensal de relatórios por e-mail",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CNT",
+        "CON",
+        "FEC",
+        "SUP",
+        "CHA"
+      ],
+      "sources": [
+        "PW-4448",
+        "PW-4524",
+        "PW-4526",
+        "PW-3199",
+        "PW-4235"
+      ],
+      "acceptance": "Respeitar clientes, destinatários, período e formato.",
+      "note": ""
+    },
+    {
+      "id": "REL-007",
+      "module": "Relatórios e notificações",
+      "function": "Resumo diário de fechamentos",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CNT",
+        "CON",
+        "FEC",
+        "SUP",
+        "CHA"
+      ],
+      "sources": [
+        "PW-4448",
+        "PW-4524",
+        "PW-4526",
+        "PW-3199",
+        "PW-4235"
+      ],
+      "acceptance": "Enviar resumo verificável dos períodos elegíveis.",
+      "note": ""
+    },
+    {
+      "id": "REL-008",
+      "module": "Relatórios e notificações",
+      "function": "Gatilhos de eventos e destinatários",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CNT",
+        "CON",
+        "FEC",
+        "SUP",
+        "CHA"
+      ],
+      "sources": [
+        "PW-4448",
+        "PW-4524",
+        "PW-4526",
+        "PW-3199",
+        "PW-4235"
+      ],
+      "acceptance": "Separar estoque, contrato, chamado, alerta e suprimento.",
+      "note": ""
+    },
+    {
+      "id": "REL-009",
+      "module": "Relatórios e notificações",
+      "function": "Notificações por nível, estoque ou previsão",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CNT",
+        "CON",
+        "FEC",
+        "SUP",
+        "CHA"
+      ],
+      "sources": [
+        "PW-4448",
+        "PW-4524",
+        "PW-4526",
+        "PW-3199",
+        "PW-4235"
+      ],
+      "acceptance": "Aplicar limite e evitar notificações repetidas.",
+      "note": ""
+    },
+    {
+      "id": "REL-010",
+      "module": "Relatórios e notificações",
+      "function": "Destinatários e preferências por usuário",
+      "status": "pendente",
+      "priority": "P1",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CNT",
+        "CON",
+        "FEC",
+        "SUP",
+        "CHA"
+      ],
+      "sources": [
+        "PW-4448",
+        "PW-4524",
+        "PW-4526",
+        "PW-3199",
+        "PW-4235"
+      ],
+      "acceptance": "Não enviar dados de clientes não autorizados.",
+      "note": ""
+    },
+    {
+      "id": "API-001",
+      "module": "Integrações",
+      "function": "Token de integração separado do agente",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CON",
+        "EST",
+        "ALE",
+        "CHA"
+      ],
+      "sources": [
+        "PW-3269"
+      ],
+      "acceptance": "Definir escopo, revogação e rotação.",
+      "note": ""
+    },
+    {
+      "id": "API-002",
+      "module": "Integrações",
+      "function": "API de clientes, impressoras e alertas",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CON",
+        "EST",
+        "ALE",
+        "CHA"
+      ],
+      "sources": [
+        "PW-3269"
+      ],
+      "acceptance": "Publicar contrato versionado e autorização.",
+      "note": ""
+    },
+    {
+      "id": "API-003",
+      "module": "Integrações",
+      "function": "API de chamados, suprimentos e estoque",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CON",
+        "EST",
+        "ALE",
+        "CHA"
+      ],
+      "sources": [
+        "PW-3269"
+      ],
+      "acceptance": "Não expor segredos nem dados fora do escopo.",
+      "note": ""
+    },
+    {
+      "id": "API-004",
+      "module": "Integrações",
+      "function": "API financeira",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CON",
+        "EST",
+        "ALE",
+        "CHA"
+      ],
+      "sources": [
+        "PW-3269"
+      ],
+      "acceptance": "Reconciliar consultas com snapshots do fechamento.",
+      "note": ""
+    },
+    {
+      "id": "API-005",
+      "module": "Integrações",
+      "function": "Inclusão e atualização de clientes e estoque",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CON",
+        "EST",
+        "ALE",
+        "CHA"
+      ],
+      "sources": [
+        "PW-3269"
+      ],
+      "acceptance": "Garantir idempotência e validação de vínculos.",
+      "note": ""
+    },
+    {
+      "id": "API-006",
+      "module": "Integrações",
+      "function": "Paginação e filtros de integração",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CON",
+        "EST",
+        "ALE",
+        "CHA"
+      ],
+      "sources": [
+        "PW-3269"
+      ],
+      "acceptance": "Retornar páginas estáveis sem omissões.",
+      "note": ""
+    },
+    {
+      "id": "API-007",
+      "module": "Integrações",
+      "function": "Documentação para ERP e BI",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "USR",
+        "CON",
+        "EST",
+        "ALE",
+        "CHA"
+      ],
+      "sources": [
+        "PW-3269"
+      ],
+      "acceptance": "Validar parceiro antes de anunciar compatibilidade.",
+      "note": ""
+    },
+    {
+      "id": "AUX-001",
+      "module": "Utilitários e suporte",
+      "function": "Download e atualização do instalador",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-3263",
+        "PW-4012",
+        "PW-3273",
+        "PW-4635",
+        "PW-3921",
+        "PW-4455"
+      ],
+      "acceptance": "Oferecer versão e instruções verificadas.",
+      "note": ""
+    },
+    {
+      "id": "AUX-002",
+      "module": "Utilitários e suporte",
+      "function": "Matriz própria de compatibilidade",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-3263",
+        "PW-4012",
+        "PW-3273",
+        "PW-4635",
+        "PW-3921",
+        "PW-4455"
+      ],
+      "acceptance": "Distinguir rede, USB, homologado e não testado.",
+      "note": ""
+    },
+    {
+      "id": "AUX-003",
+      "module": "Utilitários e suporte",
+      "function": "Histórico de versões e alterações",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-3263",
+        "PW-4012",
+        "PW-3273",
+        "PW-4635",
+        "PW-3921",
+        "PW-4455"
+      ],
+      "acceptance": "Relacionar mudanças aos testes e release.",
+      "note": ""
+    },
+    {
+      "id": "AUX-004",
+      "module": "Utilitários e suporte",
+      "function": "Ajuda e diagnóstico operacional",
+      "status": "pendente",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-3263",
+        "PW-4012",
+        "PW-3273",
+        "PW-4635",
+        "PW-3921",
+        "PW-4455"
+      ],
+      "acceptance": "Documentar rede, credenciais, troca de IP e reset.",
+      "note": ""
+    },
+    {
+      "id": "AUX-005",
+      "module": "Utilitários e suporte",
+      "function": "Sugestões e votação de melhorias",
+      "status": "opcional",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-3263",
+        "PW-4012",
+        "PW-3273",
+        "PW-4635",
+        "PW-3921",
+        "PW-4455"
+      ],
+      "acceptance": "Registrar demanda sem prometer implantação automática.",
+      "note": ""
+    },
+    {
+      "id": "AUX-006",
+      "module": "Utilitários e suporte",
+      "function": "Contatos de suporte da própria empresa",
+      "status": "opcional",
+      "priority": "P2",
+      "phase": "F6",
+      "dependencies": [
+        "F1"
+      ],
+      "sources": [
+        "PW-3263",
+        "PW-4012",
+        "PW-3273",
+        "PW-4635",
+        "PW-3921",
+        "PW-4455"
+      ],
+      "acceptance": "Publicar somente os canais reais da empresa.",
+      "note": ""
+    },
+    {
+      "id": "SAA-001",
+      "module": "Comercial do fornecedor",
+      "function": "Mensalidade do provedor por módulos",
+      "status": "fora_escopo",
+      "priority": "NA",
+      "phase": "EXCLUIDO",
+      "dependencies": [],
+      "sources": [
+        "PW-4555",
+        "PW-4852",
+        "PW-4455"
+      ],
+      "acceptance": "Não tarifar a empresa pelo uso de seu próprio servidor.",
+      "note": "Não é a cobrança de locação dos seus clientes."
+    },
+    {
+      "id": "SAA-002",
+      "module": "Comercial do fornecedor",
+      "function": "Central de boletos da assinatura PrintWayy",
+      "status": "fora_escopo",
+      "priority": "NA",
+      "phase": "EXCLUIDO",
+      "dependencies": [],
+      "sources": [
+        "PW-4555",
+        "PW-4852",
+        "PW-4455"
+      ],
+      "acceptance": "Não apresentar faturas de terceiros como contas do Dragon.",
+      "note": ""
+    },
+    {
+      "id": "SAA-003",
+      "module": "Comercial do fornecedor",
+      "function": "Bloqueio da plataforma por assinatura do fornecedor",
+      "status": "fora_escopo",
+      "priority": "NA",
+      "phase": "EXCLUIDO",
+      "dependencies": [],
+      "sources": [
+        "PW-4555",
+        "PW-4852",
+        "PW-4455"
+      ],
+      "acceptance": "Não bloquear o servidor local por mecanismo comercial externo.",
+      "note": ""
+    },
+    {
+      "id": "SAA-004",
+      "module": "Comercial do fornecedor",
+      "function": "PIX, segunda via e baixa da assinatura PrintWayy",
+      "status": "fora_escopo",
+      "priority": "NA",
+      "phase": "EXCLUIDO",
+      "dependencies": [],
+      "sources": [
+        "PW-4555",
+        "PW-4852",
+        "PW-4455"
+      ],
+      "acceptance": "Separar do futuro contas a receber da locadora.",
+      "note": ""
+    },
+    {
+      "id": "LOC-001",
+      "module": "Requisitos próprios do Dragon",
+      "function": "Compatibilidade com Windows Server 2025 e porta 3080",
+      "status": "parcial",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [],
+      "acceptance": "Instalar, reiniciar e acessar em LAN sem conflito de porta.",
+      "note": "Proposta técnica para o Dragon local; não atribuída à documentação PrintWayy."
+    },
+    {
+      "id": "LOC-002",
+      "module": "Requisitos próprios do Dragon",
+      "function": "Backup, restauração e migração versionada",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [],
+      "acceptance": "Restaurar banco e validar dados antes de atualizar produção.",
+      "note": "Proposta técnica para o Dragon local; não atribuída à documentação PrintWayy."
+    },
+    {
+      "id": "LOC-003",
+      "module": "Requisitos próprios do Dragon",
+      "function": "Teste de isolamento entre clientes",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [],
+      "acceptance": "Rejeitar leitura e alteração fora do escopo autorizado.",
+      "note": "Proposta técnica para o Dragon local; não atribuída à documentação PrintWayy."
+    },
+    {
+      "id": "LOC-004",
+      "module": "Requisitos próprios do Dragon",
+      "function": "Logs, monitoramento e proteção de credenciais",
+      "status": "parcial",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [],
+      "acceptance": "Registrar falhas sem gravar senha ou token.",
+      "note": "Proposta técnica para o Dragon local; não atribuída à documentação PrintWayy."
+    },
+    {
+      "id": "LOC-005",
+      "module": "Requisitos próprios do Dragon",
+      "function": "TLS, implantação local e VPN dos clientes",
+      "status": "parcial",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [],
+      "acceptance": "Validar conectividade e certificado no ambiente real.",
+      "note": "Proposta técnica para o Dragon local; não atribuída à documentação PrintWayy."
+    },
+    {
+      "id": "LOC-006",
+      "module": "Requisitos próprios do Dragon",
+      "function": "Política de retenção e dados pessoais",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [],
+      "acceptance": "Aplicar retenção sem apagar histórico faturado.",
+      "note": "Proposta técnica para o Dragon local; não atribuída à documentação PrintWayy."
+    },
+    {
+      "id": "LOC-007",
+      "module": "Requisitos próprios do Dragon",
+      "function": "Rotina de homologação de contadores reais",
+      "status": "pendente",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [],
+      "acceptance": "Comparar páginas de teste com contadores antes do faturamento.",
+      "note": "Proposta técnica para o Dragon local; não atribuída à documentação PrintWayy."
+    },
+    {
+      "id": "LOC-008",
+      "module": "Requisitos próprios do Dragon",
+      "function": "Segregação entre chave do cliente e token operacional",
+      "status": "parcial",
+      "priority": "P0",
+      "phase": "F1",
+      "dependencies": [],
+      "sources": [],
+      "acceptance": "Inscrever agente sem reutilizar segredo entre clientes.",
+      "note": "Proposta técnica para o Dragon local; não atribuída à documentação PrintWayy."
+    }
+  ]
+}
