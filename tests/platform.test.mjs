@@ -32,6 +32,31 @@ test('autenticação, proteção dos cadastros e persistência após reinício',
  const dash=await req('dashboard');assert.equal(dash.body.clients,1);assert.equal(dash.body.printers,1);
  await stop();await start();assert.equal((await req('session')).status,200);assert.equal((await req('clients')).body[0].name,'Cliente atualizado');assert.equal((await req('printers')).body[0].serial,'SN-001');
  assert.equal((await req('printers/'+p.body.id,'DELETE',{})).status,200);assert.equal((await req('clients/'+c.body.id,'DELETE',{})).status,200);
+ 
+ const customer=await req('clients','POST',{name:'Cliente coletado'});
+ const collector=await req('collectors','POST',{name:'Agente matriz',client_id:customer.body.id});assert.equal(collector.status,201);assert.match(collector.body.token,/^[a-f0-9]{64}$/);
+ const list=await req('collectors');assert.equal(list.body[0].token_hash,undefined);assert.equal(list.body[0].token,undefined);
+ const machine=async(payload,token=collector.body.token)=>{const r=await fetch(origin+'/api/agent/report',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify(payload)});return {status:r.status,body:await r.json()}};
+ const observed=new Date().toISOString();
+ const report={batch_id:'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee',observed_at:observed,hostname:'PC-CLIENTE',version:'0.2.0',printers:[{ip:'192.168.2.10',manufacturer:'Brother',model:'DCP',serial:'COLLECTED-1',description:'Printer',total_pages:1234,supplies:[{name:'Toner',level:50,capacity:100,unit:19}]}]};
+ assert.equal((await machine(report,'0'.repeat(64))).status,401);
+ assert.equal((await machine(report)).status,200);assert.equal((await machine(report)).body.duplicate,true);
+ let found=(await req('discoveries')).body;assert.equal(found.length,1);assert.equal(found[0].printer_id,null);
+ const discoveredId=found[0].id;
+ assert.equal((await req('discoveries/'+discoveredId+'/readings')).body.length,1);
+ const adopt=await req('discoveries/'+discoveredId+'/approve','POST',{});assert.equal(adopt.status,200);assert.equal((await req('discoveries/'+discoveredId+'/approve','POST',{})).body.id,adopt.body.id);
+ assert.equal((await req('printers')).body[0].client_id,customer.body.id);
+ const older={...report,batch_id:'bbbbbbbb-bbbb-cccc-dddd-eeeeeeeeeeee',observed_at:new Date(Date.now()-60000).toISOString(),printers:[{...report.printers[0],total_pages:1000}]};assert.equal((await machine(older)).status,200);assert.equal((await req('discoveries')).body[0].total_pages,1234);
+ const invalid={...report,batch_id:'cccccccc-bbbb-cccc-dddd-eeeeeeeeeeee',printers:[{...report.printers[0],total_pages:-1}]};assert.equal((await machine(invalid)).status,400);
+ const replacement={...report,batch_id:'dddddddd-bbbb-cccc-dddd-eeeeeeeeeeee',observed_at:new Date(Date.now()+1000).toISOString(),printers:[{...report.printers[0],serial:'NEW-DEVICE',total_pages:10}]};assert.equal((await machine(replacement)).status,200);found=(await req('discoveries')).body;assert.equal(found[0].serial,'NEW-DEVICE');assert.equal(found[0].printer_id,null);assert.equal((await req('discoveries/'+discoveredId+'/readings')).body.length,2);
+ 
+ const otherClient=await req('clients','POST',{name:'Outro cliente'});
+ const otherCollector=await req('collectors','POST',{name:'Outro agente',client_id:otherClient.body.id});
+ const collision={...report,batch_id:'eeeeeeee-bbbb-cccc-dddd-eeeeeeeeeeee',printers:[{...report.printers[0],ip:'192.168.3.10'}]};
+ assert.equal((await machine(collision,otherCollector.body.token)).status,200);
+ const conflicting=(await req('discoveries')).body.find(d=>d.client_id===otherClient.body.id);
+ assert.equal((await req('discoveries/'+conflicting.id+'/approve','POST',{})).status,409);
+ assert.equal((await req('collectors/'+collector.body.id+'/revoke','POST',{})).status,200);assert.equal((await machine(report)).status,401);
  assert.equal((await req('logout','POST',{})).status,200);assert.equal((await req('clients')).status,401);
  const page=await fetch(origin);assert.equal(page.status,200);assert.match(page.headers.get('content-security-policy'),/default-src 'self'/);
  }finally{if(child?.exitCode===null)await stop();rmSync(data,{recursive:true,force:true})}
