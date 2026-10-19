@@ -42,7 +42,7 @@ try {
 npm start
 ```
 
-5. Abra **http://127.0.0.1:3000** no próprio servidor e entre com o administrador criado.
+5. Abra **http://127.0.0.1:3080** no próprio servidor e entre com o administrador criado.
 
 O processo precisa permanecer em execução. Por padrão, o sistema aceita apenas conexões do próprio servidor. Não existe senha padrão ou cadastro público de administradores.
 
@@ -52,11 +52,11 @@ Para um teste em rede local confiável, defina o IP LAN do servidor e a origem e
 
 ```powershell
 $env:DRAGON_HOST = '192.168.1.10'
-$env:DRAGON_ORIGIN = 'http://192.168.1.10:3000'
+$env:DRAGON_ORIGIN = 'http://192.168.1.10:3080'
 npm start
 ```
 
-Substitua o IP pelo endereço real. O firewall deve permitir a porta 3000 apenas para a rede interna autorizada. HTTP não cifra as credenciais: para uso operacional na rede, configure HTTPS no IIS com proxy reverso ARR/URL Rewrite para `http://127.0.0.1:3000`, certificado válido e:
+Substitua o IP pelo endereço real. O firewall deve permitir a porta 3080 apenas para a rede interna autorizada. HTTP não cifra as credenciais: para uso operacional na rede, configure HTTPS no IIS com proxy reverso ARR/URL Rewrite para `http://127.0.0.1:3080`, certificado válido e:
 
 ```powershell
 $env:DRAGON_HOST = '127.0.0.1'
@@ -65,7 +65,7 @@ $env:DRAGON_SECURE_COOKIE = '1'
 npm start
 ```
 
-A configuração do IIS, DNS e certificado depende do servidor e não é feita automaticamente por este projeto. Não publique a porta 3000 na internet. O acesso dos futuros coletores externos será definido na etapa da integração.
+A configuração do IIS, DNS e certificado depende do servidor e não é feita automaticamente por este projeto. Não publique a porta 3080 na internet. O acesso dos futuros coletores externos será definido na etapa da integração.
 
 ## Iniciar junto com o Windows
 
