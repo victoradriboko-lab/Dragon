@@ -1,0 +1,11 @@
+{
+  "server_url": "https://dragon.suaempresa.com.br",
+  "token": "COLE_A_CREDENCIAL_GERADA_NA_PLATAFORMA",
+  "community": "COMUNIDADE_SNMP_SOMENTE_LEITURA",
+  "networks": ["192.168.1.0/24"],
+  "interval_seconds": 900,
+  "timeout_ms": 800,
+  "concurrency": 12,
+  "allow_insecure_http": false,
+  "queue_dir": "queue"
+}
