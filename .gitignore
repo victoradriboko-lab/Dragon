@@ -9,3 +9,7 @@ backups/
 data/
 .DS_Store
 Thumbs.db
+
+# Credenciais e fila do agente
+agents/config.json
+agents/queue/
