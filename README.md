@@ -1,6 +1,6 @@
 # Dragon — Plataforma local de gestão de impressão
 
-Primeira versão funcional para instalação no Windows Server 2025, com visual inspirado na Servitec.
+Versão 0.2 funcional para instalação no Windows Server 2025, com visual inspirado na Servitec.
 
 ## Disponível
 
@@ -9,6 +9,8 @@ Primeira versão funcional para instalação no Windows Server 2025, com visual 
 - Vínculo dos equipamentos aos clientes.
 - Painel com quantidades reais do banco local.
 - Banco SQLite persistente, sem servidor de banco separado.
+- Agente Windows SNMP v2c com descoberta, fila offline e envio autenticado.
+- Credenciais por coletor/cliente, aprovação de descobertas, suprimentos e histórico de contadores.
 
 ## Instalação no servidor
 
@@ -46,6 +48,10 @@ Testes de integração cobrem autenticação, proteção de requisições, cadas
 
 ## Escopo
 
-A coleta automática SNMP, contratos, faturamento, gestão de usuários e instalador como serviço Windows ainda não estão implementados. A versão funcional usa `server.mjs` e `public/`. O arquivo `dist/index.html` é apenas o protótipo visual anterior.
+Contratos, faturamento, gestão de usuários e instalador como serviço nativo Windows ainda não estão implementados. O agente usa uma tarefa agendada no Windows e requer validação nas impressoras de cada cliente. A versão funcional usa `server.mjs` e `public/`. O arquivo `dist/index.html` é apenas o protótipo visual anterior.
 
 O banco fica em `data/`, ignorado pelo Git. Não envie dados de clientes ou senhas ao repositório. O código no GitHub é instalado e executado no servidor da empresa.
+
+## Instalar o agente nos clientes
+
+Consulte **[Agente Windows: configuração, instalação e validação](docs/AGENTE-WINDOWS.md)**. Cadastre um coletor na plataforma para obter uma credencial, configure as redes privadas autorizadas e instale a tarefa Windows. Não envie `config.json`, tokens ou comunidades SNMP ao GitHub. SNMP v3, USB e contadores separados por cor não estão implementados.
