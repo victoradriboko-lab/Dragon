@@ -1,0 +1,1379 @@
+{
+  "reviewed_at": "2026-10-19",
+  "article_total": 52,
+  "faq_total": 1,
+  "index_total": 1,
+  "sources": [
+    {
+      "id": "PW-4852",
+      "title": "Central de Faturas do PrintWayy",
+      "url": "https://help.printwayy.com/central-de-faturas-do-printwayy/",
+      "modified": "2026-09-28T10:31:41",
+      "categories": [
+        "Geral",
+        "Sem categoria",
+        "Utilitários"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "SAA-001",
+        "SAA-002",
+        "SAA-003",
+        "SAA-004"
+      ]
+    },
+    {
+      "id": "PW-4807",
+      "title": "Aplicando um reajuste no contrato",
+      "url": "https://help.printwayy.com/aplicando-um-reajuste-no-contrato/",
+      "modified": "2026-02-16T18:05:54",
+      "categories": [
+        "Financeiro"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CON-001",
+        "CON-002",
+        "CON-003",
+        "CON-004",
+        "CON-005",
+        "CON-006",
+        "CON-007",
+        "CON-008",
+        "CON-009",
+        "CON-010",
+        "CON-011"
+      ]
+    },
+    {
+      "id": "PW-4721",
+      "title": "Configurações de dispositivos",
+      "url": "https://help.printwayy.com/configuracoes-de-dispositivos/",
+      "modified": "2026-10-14T11:02:53",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "DIS-001",
+        "DIS-002",
+        "DIS-003",
+        "DIS-004",
+        "DIS-005",
+        "DIS-006"
+      ]
+    },
+    {
+      "id": "PW-4697",
+      "title": "Cadastrando um dispositivo",
+      "url": "https://help.printwayy.com/cadastrando-um-dispositivo/",
+      "modified": "2026-10-14T11:02:46",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "DIS-001",
+        "DIS-002",
+        "DIS-003",
+        "DIS-004",
+        "DIS-005",
+        "DIS-006"
+      ]
+    },
+    {
+      "id": "PW-3273",
+      "title": "Últimas atualizações",
+      "url": "https://help.printwayy.com/ultimas-atualizacoes/",
+      "modified": "2025-04-15T08:54:08",
+      "categories": [
+        "Novidades"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "UX-001",
+        "UX-002",
+        "UX-003",
+        "UX-004",
+        "UX-005",
+        "UX-006",
+        "UX-007",
+        "UX-008",
+        "UX-009",
+        "UX-010",
+        "AUX-001",
+        "AUX-002",
+        "AUX-003",
+        "AUX-004",
+        "AUX-005",
+        "AUX-006"
+      ]
+    },
+    {
+      "id": "PW-4635",
+      "title": "Sugira à PrintWayy",
+      "url": "https://help.printwayy.com/sugira-a-printwayy/",
+      "modified": "2025-01-10T09:23:56",
+      "categories": [
+        "Novidades"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AUX-001",
+        "AUX-002",
+        "AUX-003",
+        "AUX-004",
+        "AUX-005",
+        "AUX-006"
+      ]
+    },
+    {
+      "id": "PW-3390",
+      "title": "Cadastrar um cliente",
+      "url": "https://help.printwayy.com/cadastrar-um-cliente/",
+      "modified": "2026-10-14T11:02:32",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CLI-001",
+        "CLI-002",
+        "CLI-003",
+        "CLI-004",
+        "CLI-005",
+        "CLI-006",
+        "CLI-007",
+        "CLI-008",
+        "CLI-009"
+      ]
+    },
+    {
+      "id": "PW-3249",
+      "title": "Cadastrar usuários",
+      "url": "https://help.printwayy.com/cadastrar-usuarios/",
+      "modified": "2026-10-14T11:02:23",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "USR-001",
+        "USR-002",
+        "USR-003",
+        "USR-004",
+        "USR-005",
+        "USR-006",
+        "USR-007",
+        "USR-008"
+      ]
+    },
+    {
+      "id": "PW-3291",
+      "title": "Visão geral do PrintWayy Dragon",
+      "url": "https://help.printwayy.com/visao-geral/",
+      "modified": "2026-10-14T11:02:12",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "UX-001",
+        "UX-002",
+        "UX-003",
+        "UX-004",
+        "UX-005",
+        "UX-006",
+        "UX-007",
+        "UX-008",
+        "UX-009",
+        "UX-010"
+      ]
+    },
+    {
+      "id": "PW-4526",
+      "title": "Receber eventos do sistema por e-mail",
+      "url": "https://help.printwayy.com/notificar-eventos/",
+      "modified": "2026-10-14T11:02:04",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "REL-001",
+        "REL-002",
+        "REL-003",
+        "REL-004",
+        "REL-005",
+        "REL-006",
+        "REL-007",
+        "REL-008",
+        "REL-009",
+        "REL-010"
+      ]
+    },
+    {
+      "id": "PW-4524",
+      "title": "Receber relatórios por e-mail",
+      "url": "https://help.printwayy.com/relatorio-email/",
+      "modified": "2026-10-14T11:01:53",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "REL-001",
+        "REL-002",
+        "REL-003",
+        "REL-004",
+        "REL-005",
+        "REL-006",
+        "REL-007",
+        "REL-008",
+        "REL-009",
+        "REL-010"
+      ]
+    },
+    {
+      "id": "PW-4256",
+      "title": "Habilitar ou desabilitar módulos do sistema",
+      "url": "https://help.printwayy.com/habilitar-desabilitar-modulos/",
+      "modified": "2026-10-14T11:01:36",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "EMP-001",
+        "EMP-002",
+        "EMP-003",
+        "EMP-004",
+        "EMP-005",
+        "EMP-006",
+        "EMP-007"
+      ]
+    },
+    {
+      "id": "PW-3259",
+      "title": "Configurações da sua empresa",
+      "url": "https://help.printwayy.com/configuracoes-empresa/",
+      "modified": "2026-10-14T11:01:28",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "EMP-001",
+        "EMP-002",
+        "EMP-003",
+        "EMP-004",
+        "EMP-005",
+        "EMP-006",
+        "EMP-007"
+      ]
+    },
+    {
+      "id": "PW-3199",
+      "title": "Configurações de relatórios",
+      "url": "https://help.printwayy.com/configuracoes-relatorios/",
+      "modified": "2026-10-14T11:01:19",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "UX-001",
+        "UX-002",
+        "UX-003",
+        "UX-004",
+        "UX-005",
+        "UX-006",
+        "UX-007",
+        "UX-008",
+        "UX-009",
+        "UX-010",
+        "FEC-001",
+        "FEC-002",
+        "FEC-003",
+        "FEC-004",
+        "FEC-005",
+        "FEC-006",
+        "FEC-007",
+        "FEC-008",
+        "FEC-009",
+        "FEC-010",
+        "FEC-011",
+        "REL-001",
+        "REL-002",
+        "REL-003",
+        "REL-004",
+        "REL-005",
+        "REL-006",
+        "REL-007",
+        "REL-008",
+        "REL-009",
+        "REL-010"
+      ]
+    },
+    {
+      "id": "PW-4555",
+      "title": "Entendendo sua fatura PrintWayy",
+      "url": "https://help.printwayy.com/cobranca-printwayy/",
+      "modified": "2026-10-14T11:01:11",
+      "categories": [
+        "Geral"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "SAA-001",
+        "SAA-002",
+        "SAA-003",
+        "SAA-004"
+      ]
+    },
+    {
+      "id": "PW-4375",
+      "title": "Instalação do PrintWayy Client",
+      "url": "https://help.printwayy.com/instalacao-client/",
+      "modified": "2026-10-14T10:54:27",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AGE-001",
+        "AGE-002",
+        "AGE-003",
+        "AGE-004",
+        "AGE-005",
+        "AGE-006",
+        "AGE-007",
+        "AGE-008",
+        "AGE-009",
+        "AGE-010",
+        "AGE-011",
+        "AGE-012",
+        "AGE-013",
+        "AGE-014",
+        "AGE-015",
+        "AGE-016"
+      ]
+    },
+    {
+      "id": "PW-4387",
+      "title": "Monitorando impressoras com o PrintWayy Client",
+      "url": "https://help.printwayy.com/monitorando-impressoras/",
+      "modified": "2026-10-14T10:56:33",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AGE-001",
+        "AGE-002",
+        "AGE-003",
+        "AGE-004",
+        "AGE-005",
+        "AGE-006",
+        "AGE-007",
+        "AGE-008",
+        "AGE-009",
+        "AGE-010",
+        "AGE-011",
+        "AGE-012",
+        "AGE-013",
+        "AGE-014",
+        "AGE-015",
+        "AGE-016"
+      ]
+    },
+    {
+      "id": "PW-4396",
+      "title": "Monitorando impressoras de forma remota",
+      "url": "https://help.printwayy.com/monitorando-remotamente/",
+      "modified": "2026-10-14T10:56:24",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AGE-001",
+        "AGE-002",
+        "AGE-003",
+        "AGE-004",
+        "AGE-005",
+        "AGE-006",
+        "AGE-007",
+        "AGE-008",
+        "AGE-009",
+        "AGE-010",
+        "AGE-011",
+        "AGE-012",
+        "AGE-013",
+        "AGE-014",
+        "AGE-015",
+        "AGE-016"
+      ]
+    },
+    {
+      "id": "PW-3186",
+      "title": "Impressora com lançamento manual de contadores",
+      "url": "https://help.printwayy.com/adicionando-contadores/",
+      "modified": "2026-10-14T10:56:16",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CNT-001",
+        "CNT-002",
+        "CNT-003",
+        "CNT-004",
+        "CNT-005",
+        "CNT-006",
+        "CNT-007",
+        "CNT-008",
+        "CNT-009"
+      ]
+    },
+    {
+      "id": "PW-4403",
+      "title": "Visualizando suas impressoras",
+      "url": "https://help.printwayy.com/visualizando-impressoras/",
+      "modified": "2026-10-14T10:56:08",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "PAR-001",
+        "PAR-002",
+        "PAR-003",
+        "PAR-004",
+        "PAR-005",
+        "PAR-006",
+        "PAR-007",
+        "PAR-008",
+        "PAR-009",
+        "PAR-010",
+        "PAR-011",
+        "PAR-012",
+        "PAR-013",
+        "PAR-014",
+        "PAR-015",
+        "PAR-016"
+      ]
+    },
+    {
+      "id": "PW-4448",
+      "title": "Visualizando contadores",
+      "url": "https://help.printwayy.com/visualizando-contadores/",
+      "modified": "2026-10-14T10:55:56",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CNT-001",
+        "CNT-002",
+        "CNT-003",
+        "CNT-004",
+        "CNT-005",
+        "CNT-006",
+        "CNT-007",
+        "CNT-008",
+        "CNT-009",
+        "REL-001",
+        "REL-002",
+        "REL-003",
+        "REL-004",
+        "REL-005",
+        "REL-006",
+        "REL-007",
+        "REL-008",
+        "REL-009",
+        "REL-010"
+      ]
+    },
+    {
+      "id": "PW-4439",
+      "title": "Movimentando impressoras entre clientes",
+      "url": "https://help.printwayy.com/movimentando-impressoras/",
+      "modified": "2026-10-14T10:55:48",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "PAR-001",
+        "PAR-002",
+        "PAR-003",
+        "PAR-004",
+        "PAR-005",
+        "PAR-006",
+        "PAR-007",
+        "PAR-008",
+        "PAR-009",
+        "PAR-010",
+        "PAR-011",
+        "PAR-012",
+        "PAR-013",
+        "PAR-014",
+        "PAR-015",
+        "PAR-016"
+      ]
+    },
+    {
+      "id": "PW-3189",
+      "title": "Novas impressoras",
+      "url": "https://help.printwayy.com/novas-impressoras/",
+      "modified": "2026-10-14T10:55:30",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "PAR-001",
+        "PAR-002",
+        "PAR-003",
+        "PAR-004",
+        "PAR-005",
+        "PAR-006",
+        "PAR-007",
+        "PAR-008",
+        "PAR-009",
+        "PAR-010",
+        "PAR-011",
+        "PAR-012",
+        "PAR-013",
+        "PAR-014",
+        "PAR-015",
+        "PAR-016"
+      ]
+    },
+    {
+      "id": "PW-3693",
+      "title": "Monitoramentos duplicados",
+      "url": "https://help.printwayy.com/monitoramentos-duplicados/",
+      "modified": "2026-10-14T10:55:22",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "PAR-001",
+        "PAR-002",
+        "PAR-003",
+        "PAR-004",
+        "PAR-005",
+        "PAR-006",
+        "PAR-007",
+        "PAR-008",
+        "PAR-009",
+        "PAR-010",
+        "PAR-011",
+        "PAR-012",
+        "PAR-013",
+        "PAR-014",
+        "PAR-015",
+        "PAR-016"
+      ]
+    },
+    {
+      "id": "PW-3233",
+      "title": "Estoque de suprimentos",
+      "url": "https://help.printwayy.com/estoque-suprimentos/",
+      "modified": "2026-10-14T10:58:05",
+      "categories": [
+        "Suprimentos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "EST-001",
+        "EST-002",
+        "EST-003",
+        "EST-004",
+        "EST-005",
+        "EST-006",
+        "EST-007",
+        "EST-008",
+        "EST-009"
+      ]
+    },
+    {
+      "id": "PW-4430",
+      "title": "Configurações de impressora",
+      "url": "https://help.printwayy.com/configuracoes-impressora/",
+      "modified": "2026-10-14T10:55:13",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "PAR-001",
+        "PAR-002",
+        "PAR-003",
+        "PAR-004",
+        "PAR-005",
+        "PAR-006",
+        "PAR-007",
+        "PAR-008",
+        "PAR-009",
+        "PAR-010",
+        "PAR-011",
+        "PAR-012",
+        "PAR-013",
+        "PAR-014",
+        "PAR-015",
+        "PAR-016",
+        "ALE-001",
+        "ALE-002",
+        "ALE-003",
+        "ALE-004",
+        "ALE-005",
+        "ALE-006",
+        "ALE-007",
+        "ALE-008",
+        "ALE-009",
+        "ALE-010"
+      ]
+    },
+    {
+      "id": "PW-4275",
+      "title": "Movimentando itens de estoque",
+      "url": "https://help.printwayy.com/movimentando-estoque/",
+      "modified": "2026-10-14T10:57:58",
+      "categories": [
+        "Suprimentos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "EST-001",
+        "EST-002",
+        "EST-003",
+        "EST-004",
+        "EST-005",
+        "EST-006",
+        "EST-007",
+        "EST-008",
+        "EST-009"
+      ]
+    },
+    {
+      "id": "PW-3215",
+      "title": "Níveis dos suprimentos",
+      "url": "https://help.printwayy.com/niveis-suprimentos/",
+      "modified": "2026-10-14T10:57:50",
+      "categories": [
+        "Suprimentos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "SUP-001",
+        "SUP-002",
+        "SUP-003",
+        "SUP-004",
+        "SUP-005",
+        "SUP-006",
+        "SUP-007",
+        "SUP-008",
+        "SUP-009",
+        "SUP-010",
+        "SUP-011",
+        "SUP-012",
+        "SUP-013",
+        "SUP-014",
+        "SUP-015"
+      ]
+    },
+    {
+      "id": "PW-3261",
+      "title": "Mantendo as impressoras comunicando",
+      "url": "https://help.printwayy.com/monitoramento-conexoes/",
+      "modified": "2026-10-14T10:54:59",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AGE-001",
+        "AGE-002",
+        "AGE-003",
+        "AGE-004",
+        "AGE-005",
+        "AGE-006",
+        "AGE-007",
+        "AGE-008",
+        "AGE-009",
+        "AGE-010",
+        "AGE-011",
+        "AGE-012",
+        "AGE-013",
+        "AGE-014",
+        "AGE-015",
+        "AGE-016",
+        "ALE-001",
+        "ALE-002",
+        "ALE-003",
+        "ALE-004",
+        "ALE-005",
+        "ALE-006",
+        "ALE-007",
+        "ALE-008",
+        "ALE-009",
+        "ALE-010"
+      ]
+    },
+    {
+      "id": "PW-4324",
+      "title": "Trocas de suprimento",
+      "url": "https://help.printwayy.com/trocas-suprimento/",
+      "modified": "2026-10-14T10:57:42",
+      "categories": [
+        "Suprimentos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "SUP-001",
+        "SUP-002",
+        "SUP-003",
+        "SUP-004",
+        "SUP-005",
+        "SUP-006",
+        "SUP-007",
+        "SUP-008",
+        "SUP-009",
+        "SUP-010",
+        "SUP-011",
+        "SUP-012",
+        "SUP-013",
+        "SUP-014",
+        "SUP-015"
+      ]
+    },
+    {
+      "id": "PW-3229",
+      "title": "Reposição inteligente de suprimentos",
+      "url": "https://help.printwayy.com/reposicao-suprimentos/",
+      "modified": "2026-10-14T10:57:33",
+      "categories": [
+        "Suprimentos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "SUP-001",
+        "SUP-002",
+        "SUP-003",
+        "SUP-004",
+        "SUP-005",
+        "SUP-006",
+        "SUP-007",
+        "SUP-008",
+        "SUP-009",
+        "SUP-010",
+        "SUP-011",
+        "SUP-012",
+        "SUP-013",
+        "SUP-014",
+        "SUP-015"
+      ]
+    },
+    {
+      "id": "PW-3255",
+      "title": "Configurações de suprimentos, estoque e trocas",
+      "url": "https://help.printwayy.com/configuracoes-suprimentos-estoque-trocas/",
+      "modified": "2026-10-14T10:57:15",
+      "categories": [
+        "Suprimentos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "EST-001",
+        "EST-002",
+        "EST-003",
+        "EST-004",
+        "EST-005",
+        "EST-006",
+        "EST-007",
+        "EST-008",
+        "EST-009",
+        "SUP-001",
+        "SUP-002",
+        "SUP-003",
+        "SUP-004",
+        "SUP-005",
+        "SUP-006",
+        "SUP-007",
+        "SUP-008",
+        "SUP-009",
+        "SUP-010",
+        "SUP-011",
+        "SUP-012",
+        "SUP-013",
+        "SUP-014",
+        "SUP-015"
+      ]
+    },
+    {
+      "id": "PW-3227",
+      "title": "Indicadores de uso",
+      "url": "https://help.printwayy.com/indicadores-suprimentos/",
+      "modified": "2026-10-14T10:57:23",
+      "categories": [
+        "Suprimentos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "SUP-001",
+        "SUP-002",
+        "SUP-003",
+        "SUP-004",
+        "SUP-005",
+        "SUP-006",
+        "SUP-007",
+        "SUP-008",
+        "SUP-009",
+        "SUP-010",
+        "SUP-011",
+        "SUP-012",
+        "SUP-013",
+        "SUP-014",
+        "SUP-015"
+      ]
+    },
+    {
+      "id": "PW-4052",
+      "title": "Configurando proxy no PrintWayy Client",
+      "url": "https://help.printwayy.com/proxy/",
+      "modified": "2026-10-14T10:54:50",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AGE-001",
+        "AGE-002",
+        "AGE-003",
+        "AGE-004",
+        "AGE-005",
+        "AGE-006",
+        "AGE-007",
+        "AGE-008",
+        "AGE-009",
+        "AGE-010",
+        "AGE-011",
+        "AGE-012",
+        "AGE-013",
+        "AGE-014",
+        "AGE-015",
+        "AGE-016"
+      ]
+    },
+    {
+      "id": "PW-3336",
+      "title": "Configurando comunicação Printwayy Client via e-mail",
+      "url": "https://help.printwayy.com/printwayy-client-via-email/",
+      "modified": "2026-09-17T11:31:49",
+      "categories": [
+        "Monitoramento"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AGE-001",
+        "AGE-002",
+        "AGE-003",
+        "AGE-004",
+        "AGE-005",
+        "AGE-006",
+        "AGE-007",
+        "AGE-008",
+        "AGE-009",
+        "AGE-010",
+        "AGE-011",
+        "AGE-012",
+        "AGE-013",
+        "AGE-014",
+        "AGE-015",
+        "AGE-016"
+      ]
+    },
+    {
+      "id": "PW-3193",
+      "title": "Adicionando um contrato",
+      "url": "https://help.printwayy.com/adicionando-contrato/",
+      "modified": "2026-10-14T10:58:57",
+      "categories": [
+        "Financeiro"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CON-001",
+        "CON-002",
+        "CON-003",
+        "CON-004",
+        "CON-005",
+        "CON-006",
+        "CON-007",
+        "CON-008",
+        "CON-009",
+        "CON-010",
+        "CON-011"
+      ]
+    },
+    {
+      "id": "PW-3197",
+      "title": "Fechamentos mensais",
+      "url": "https://help.printwayy.com/fechamentos-mensais/",
+      "modified": "2026-10-14T10:58:44",
+      "categories": [
+        "Financeiro"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "FEC-001",
+        "FEC-002",
+        "FEC-003",
+        "FEC-004",
+        "FEC-005",
+        "FEC-006",
+        "FEC-007",
+        "FEC-008",
+        "FEC-009",
+        "FEC-010",
+        "FEC-011"
+      ]
+    },
+    {
+      "id": "PW-4235",
+      "title": "Configuração de relatório de fechamento",
+      "url": "https://help.printwayy.com/configuracao-relatorio-fechamento/",
+      "modified": "2026-10-14T10:58:31",
+      "categories": [
+        "Financeiro"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "FEC-001",
+        "FEC-002",
+        "FEC-003",
+        "FEC-004",
+        "FEC-005",
+        "FEC-006",
+        "FEC-007",
+        "FEC-008",
+        "FEC-009",
+        "FEC-010",
+        "FEC-011",
+        "REL-001",
+        "REL-002",
+        "REL-003",
+        "REL-004",
+        "REL-005",
+        "REL-006",
+        "REL-007",
+        "REL-008",
+        "REL-009",
+        "REL-010"
+      ]
+    },
+    {
+      "id": "PW-3299",
+      "title": "Alertas",
+      "url": "https://help.printwayy.com/alertas/",
+      "modified": "2026-10-14T11:00:28",
+      "categories": [
+        "Alertas"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "ALE-001",
+        "ALE-002",
+        "ALE-003",
+        "ALE-004",
+        "ALE-005",
+        "ALE-006",
+        "ALE-007",
+        "ALE-008",
+        "ALE-009",
+        "ALE-010"
+      ]
+    },
+    {
+      "id": "PW-3253",
+      "title": "Configurações de alertas",
+      "url": "https://help.printwayy.com/configuracoes-alertas/",
+      "modified": "2026-10-14T11:00:20",
+      "categories": [
+        "Alertas"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "ALE-001",
+        "ALE-002",
+        "ALE-003",
+        "ALE-004",
+        "ALE-005",
+        "ALE-006",
+        "ALE-007",
+        "ALE-008",
+        "ALE-009",
+        "ALE-010"
+      ]
+    },
+    {
+      "id": "PW-4122",
+      "title": "Como abrir um chamado",
+      "url": "https://help.printwayy.com/como-abrir-um-chamado/",
+      "modified": "2026-10-14T11:00:00",
+      "categories": [
+        "Chamados"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CHA-001",
+        "CHA-002",
+        "CHA-003",
+        "CHA-004",
+        "CHA-005",
+        "CHA-006",
+        "CHA-007",
+        "CHA-008",
+        "CHA-009",
+        "CHA-010",
+        "CHA-011",
+        "CHA-012"
+      ]
+    },
+    {
+      "id": "PW-4136",
+      "title": "Atendendo chamados",
+      "url": "https://help.printwayy.com/atendendo-chamados/",
+      "modified": "2026-10-14T10:59:50",
+      "categories": [
+        "Chamados"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CHA-001",
+        "CHA-002",
+        "CHA-003",
+        "CHA-004",
+        "CHA-005",
+        "CHA-006",
+        "CHA-007",
+        "CHA-008",
+        "CHA-009",
+        "CHA-010",
+        "CHA-011",
+        "CHA-012"
+      ]
+    },
+    {
+      "id": "PW-3843",
+      "title": "Relatório de Chamados",
+      "url": "https://help.printwayy.com/relatorio-chamados/",
+      "modified": "2026-10-14T10:59:41",
+      "categories": [
+        "Chamados"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CHA-001",
+        "CHA-002",
+        "CHA-003",
+        "CHA-004",
+        "CHA-005",
+        "CHA-006",
+        "CHA-007",
+        "CHA-008",
+        "CHA-009",
+        "CHA-010",
+        "CHA-011",
+        "CHA-012"
+      ]
+    },
+    {
+      "id": "PW-3257",
+      "title": "Configurações de Chamados",
+      "url": "https://help.printwayy.com/configuracoes-de-chamados/",
+      "modified": "2026-10-14T10:59:34",
+      "categories": [
+        "Chamados"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CHA-001",
+        "CHA-002",
+        "CHA-003",
+        "CHA-004",
+        "CHA-005",
+        "CHA-006",
+        "CHA-007",
+        "CHA-008",
+        "CHA-009",
+        "CHA-010",
+        "CHA-011",
+        "CHA-012"
+      ]
+    },
+    {
+      "id": "PW-2823",
+      "title": "1ª Etapa: Cadastrando um cliente e gerando chave de instalação",
+      "url": "https://help.printwayy.com/etapa-1-cadastro-cliente-gerando-chave/",
+      "modified": "2024-12-19T16:08:25",
+      "categories": [
+        "Primeiros Passos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CLI-001",
+        "CLI-002",
+        "CLI-003",
+        "CLI-004",
+        "CLI-005",
+        "CLI-006",
+        "CLI-007",
+        "CLI-008",
+        "CLI-009"
+      ]
+    },
+    {
+      "id": "PW-2841",
+      "title": "2ª Etapa: Instalando o PrintWayy Client e monitorando impressoras",
+      "url": "https://help.printwayy.com/etapa-2-instalando-client-monitorando-impressoras/",
+      "modified": "2024-12-20T10:40:01",
+      "categories": [
+        "Primeiros Passos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AGE-001",
+        "AGE-002",
+        "AGE-003",
+        "AGE-004",
+        "AGE-005",
+        "AGE-006",
+        "AGE-007",
+        "AGE-008",
+        "AGE-009",
+        "AGE-010",
+        "AGE-011",
+        "AGE-012",
+        "AGE-013",
+        "AGE-014",
+        "AGE-015",
+        "AGE-016"
+      ]
+    },
+    {
+      "id": "PW-2850",
+      "title": "3ª Etapa: Visualizando os contadores capturados",
+      "url": "https://help.printwayy.com/etapa-3-visualizando-contadores/",
+      "modified": "2024-12-05T13:55:54",
+      "categories": [
+        "Primeiros Passos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "CNT-001",
+        "CNT-002",
+        "CNT-003",
+        "CNT-004",
+        "CNT-005",
+        "CNT-006",
+        "CNT-007",
+        "CNT-008",
+        "CNT-009"
+      ]
+    },
+    {
+      "id": "PW-4097",
+      "title": "Próximos passos",
+      "url": "https://help.printwayy.com/proximos-passos/",
+      "modified": "2024-12-04T17:00:11",
+      "categories": [
+        "Primeiros Passos"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "UX-001",
+        "UX-002",
+        "UX-003",
+        "UX-004",
+        "UX-005",
+        "UX-006",
+        "UX-007",
+        "UX-008",
+        "UX-009",
+        "UX-010"
+      ]
+    },
+    {
+      "id": "PW-3263",
+      "title": "Downloads",
+      "url": "https://help.printwayy.com/downloads/",
+      "modified": "2024-12-18T15:40:12",
+      "categories": [
+        "Utilitários"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AGE-001",
+        "AGE-002",
+        "AGE-003",
+        "AGE-004",
+        "AGE-005",
+        "AGE-006",
+        "AGE-007",
+        "AGE-008",
+        "AGE-009",
+        "AGE-010",
+        "AGE-011",
+        "AGE-012",
+        "AGE-013",
+        "AGE-014",
+        "AGE-015",
+        "AGE-016",
+        "AUX-001",
+        "AUX-002",
+        "AUX-003",
+        "AUX-004",
+        "AUX-005",
+        "AUX-006"
+      ]
+    },
+    {
+      "id": "PW-4012",
+      "title": "Dispositivos homologados",
+      "url": "https://help.printwayy.com/dispositivos-homologados/",
+      "modified": "2024-12-18T15:41:05",
+      "categories": [
+        "Utilitários"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AGE-001",
+        "AGE-002",
+        "AGE-003",
+        "AGE-004",
+        "AGE-005",
+        "AGE-006",
+        "AGE-007",
+        "AGE-008",
+        "AGE-009",
+        "AGE-010",
+        "AGE-011",
+        "AGE-012",
+        "AGE-013",
+        "AGE-014",
+        "AGE-015",
+        "AGE-016",
+        "AUX-001",
+        "AUX-002",
+        "AUX-003",
+        "AUX-004",
+        "AUX-005",
+        "AUX-006"
+      ]
+    },
+    {
+      "id": "PW-3921",
+      "title": "Contato",
+      "url": "https://help.printwayy.com/contato/",
+      "modified": "2025-09-09T14:10:44",
+      "categories": [
+        "Contato"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "AUX-001",
+        "AUX-002",
+        "AUX-003",
+        "AUX-004",
+        "AUX-005",
+        "AUX-006"
+      ]
+    },
+    {
+      "id": "PW-3269",
+      "title": "Integração",
+      "url": "https://help.printwayy.com/integracao/",
+      "modified": "2026-06-08T10:57:26",
+      "categories": [
+        "Integração"
+      ],
+      "kind": "artigo",
+      "requirements": [
+        "API-001",
+        "API-002",
+        "API-003",
+        "API-004",
+        "API-005",
+        "API-006",
+        "API-007"
+      ]
+    },
+    {
+      "id": "PW-4455",
+      "title": "Dúvidas frequentes",
+      "url": "https://help.printwayy.com/duvidas-frequentes/",
+      "kind": "faq",
+      "requirements": [
+        "AGE-001",
+        "AGE-002",
+        "AGE-003",
+        "AGE-004",
+        "AGE-005",
+        "AGE-006",
+        "AGE-007",
+        "AGE-008",
+        "AGE-009",
+        "AGE-010",
+        "AGE-011",
+        "AGE-012",
+        "AGE-013",
+        "AGE-014",
+        "AGE-015",
+        "AGE-016",
+        "CNT-001",
+        "CNT-002",
+        "CNT-003",
+        "CNT-004",
+        "CNT-005",
+        "CNT-006",
+        "CNT-007",
+        "CNT-008",
+        "CNT-009",
+        "FEC-001",
+        "FEC-002",
+        "FEC-003",
+        "FEC-004",
+        "FEC-005",
+        "FEC-006",
+        "FEC-007",
+        "FEC-008",
+        "FEC-009",
+        "FEC-010",
+        "FEC-011",
+        "AUX-001",
+        "AUX-002",
+        "AUX-003",
+        "AUX-004",
+        "AUX-005",
+        "AUX-006",
+        "SAA-001",
+        "SAA-002",
+        "SAA-003",
+        "SAA-004"
+      ]
+    },
+    {
+      "id": "PW-HOME",
+      "title": "Central de Ajuda",
+      "url": "https://help.printwayy.com/",
+      "kind": "indice",
+      "requirements": [],
+      "review_note": "Índice ou orientação de iniciação; conteúdo consolidado nos requisitos dos módulos, sem função exclusiva."
+    }
+  ]
+}
