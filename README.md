@@ -20,7 +20,7 @@ cd C:\Dragon
 npm start
 ```
 
-O configurador solicita e-mail e senha do administrador. Abra **http://127.0.0.1:3000** no servidor.
+O configurador solicita e-mail e senha do administrador. Abra **http://127.0.0.1:3080** no servidor.
 
 ## Acesso em rede local
 
@@ -28,11 +28,11 @@ Para um teste na rede interna, substitua pelo IP LAN real do servidor:
 
 ```powershell
 $env:DRAGON_HOST = '192.168.1.10'
-$env:DRAGON_ORIGIN = 'http://192.168.1.10:3000'
+$env:DRAGON_ORIGIN = 'http://192.168.1.10:3080'
 npm start
 ```
 
-Nos computadores da empresa, acesse **http://192.168.1.10:3000**. Configure o firewall para permitir a porta somente na rede interna. Para uso operacional, configure HTTPS com IIS conforme o guia. Sem essas variáveis, o padrão é aceitar somente acesso no próprio servidor.
+Nos computadores da empresa, acesse **http://192.168.1.10:3080**. Configure o firewall para permitir a porta somente na rede interna. Para uso operacional, configure HTTPS com IIS conforme o guia. Sem essas variáveis, o padrão é aceitar somente acesso no próprio servidor.
 
 **[Guia completo de instalação, HTTPS, inicialização e backup](docs/INSTALACAO-WINDOWS.md)**
 
