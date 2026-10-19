@@ -6,7 +6,9 @@ import { randomUUID } from 'node:crypto';
 import { isIPv4 } from 'node:net';
 import { identify } from './snmp.mjs';
 
-const here=dirname(fileURLToPath(import.meta.url));
+const moduleFile=typeof import.meta.url==='string'?fileURLToPath(import.meta.url):null;
+const here=moduleFile?dirname(moduleFile):dirname(process.execPath);
+export const AGENT_VERSION='0.3.0';
 const privateIP=ip=>{if(!isIPv4(ip))return false;const [a,b]=ip.split('.').map(Number);return a===10||a===192&&b===168||a===172&&b>=16&&b<=31;};
 export function targets(networks){
  if(!Array.isArray(networks)||!networks.length||networks.length>32)throw Error('Informe de 1 a 32 redes/IPs privados.');
@@ -41,15 +43,15 @@ export async function cycle(config,probe=identify){
  await Promise.all(Array.from({length:Math.min(config.concurrency,config.targets.length)},async()=>{while(cursor<config.targets.length){const ip=config.targets[cursor++];try{const p=await probe(ip,config.community,{timeout:config.timeout_ms});if(p)printers.push(p)}catch{/* Host sem resposta: manter o histórico anterior. */}}}));
  if(queued+Math.max(1,Math.ceil(printers.length/200))>1000)throw Error('Fila sem espaço para o resultado. Corrija a conexão.');
  const observed_at=new Date().toISOString();
- for(let i=0;i<Math.max(printers.length,1);i+=200){const batch={batch_id:randomUUID(),observed_at,hostname:hostname(),version:'0.2.0',printers:printers.slice(i,i+200)};const filename=join(config.queue_dir,Date.now()+'-'+batch.batch_id+'.json');writeFileSync(filename+'.tmp',JSON.stringify(batch),{mode:0o600});renameSync(filename+'.tmp',filename);}
+ for(let i=0;i<Math.max(printers.length,1);i+=200){const batch={batch_id:randomUUID(),observed_at,hostname:hostname(),version:AGENT_VERSION,printers:printers.slice(i,i+200)};const filename=join(config.queue_dir,Date.now()+'-'+batch.batch_id+'.json');writeFileSync(filename+'.tmp',JSON.stringify(batch),{mode:0o600});renameSync(filename+'.tmp',filename);}
  console.log(observed_at,`${printers.length} impressora(s) identificada(s).`);
  await flush(config);
  return printers.length;
 }
-async function main(){
- const arg=process.argv.indexOf('--config');const path=resolve(arg>=0?process.argv[arg+1]:join(here,'config.json'));
+export async function runAgent(configPath){
+ const arg=process.argv.indexOf('--config');const path=resolve(configPath||(arg>=0?process.argv[arg+1]:join(here,'config.json')));
  const config=configuration(JSON.parse(readFileSync(path,'utf8')),dirname(path));
  let stopping=false;process.on('SIGTERM',()=>stopping=true);process.on('SIGINT',()=>{stopping=true;process.exit(0)});
  do{try{await cycle(config)}catch(e){console.error(new Date().toISOString(),e.message);if(process.argv.includes('--once'))process.exitCode=1}if(process.argv.includes('--once')||stopping)break;await new Promise(r=>setTimeout(r,config.interval_seconds*1000));}while(!stopping);
 }
-if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url))main().catch(()=>{console.error('Falha ao iniciar o agente. Verifique config.json, token e redes.');process.exitCode=1});
+if(moduleFile&&process.argv[1]&&resolve(process.argv[1])===moduleFile)runAgent().catch(()=>{console.error('Falha ao iniciar o agente. Verifique config.json, token e redes.');process.exitCode=1});

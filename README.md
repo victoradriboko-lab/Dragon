@@ -1,6 +1,6 @@
 # Dragon — Plataforma local de gestão de impressão
 
-Versão 0.2 funcional para instalação no Windows Server 2025, com visual inspirado na Servitec.
+Versão 0.3 funcional para instalação no Windows Server 2025, com visual inspirado na Servitec.
 
 ## Disponível
 
@@ -54,7 +54,9 @@ O banco fica em `data/`, ignorado pelo Git. Não envie dados de clientes ou senh
 
 ## Instalar o agente nos clientes
 
-Consulte **[Agente Windows: configuração, instalação e validação](docs/AGENTE-WINDOWS.md)**. Cadastre um coletor na plataforma para obter uma credencial, configure as redes privadas autorizadas e instale a tarefa Windows. Não envie `config.json`, tokens ou comunidades SNMP ao GitHub. SNMP v3, USB e contadores separados por cor não estão implementados.
+Para instalação por assistente EXE, consulte **[Instalador Windows EXE](docs/INSTALADOR-EXE.md)**. Use o mesmo token do cliente nos vários PCs; cada instalação recebe uma identidade própria.
+
+Para instalação manual, consulte **[Agente Windows: configuração, instalação e validação](docs/AGENTE-WINDOWS.md)**. Cadastre um coletor na plataforma para obter uma credencial, configure as redes privadas autorizadas e instale a tarefa Windows. Não envie `config.json`, tokens ou comunidades SNMP ao GitHub. SNMP v3, USB e contadores separados por cor não estão implementados.
 
 ## Mapa funcional e evolução
 

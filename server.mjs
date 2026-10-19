@@ -116,7 +116,8 @@ const server = http.createServer(async (req, res) => {
     if ((req.method === 'POST' && !id) || (req.method === 'PUT' && id)) {
       const { names,result } = fields(table,await body(req));
       const r = id ? db.prepare(`UPDATE ${table} SET ${names.map(n=>`${n}=?`).join(',')} WHERE id=?`).run(...result,id) : db.prepare(`INSERT INTO ${table}(${names.join(',')}) VALUES(${names.map(()=>'?').join(',')})`).run(...result);
-      return json(res,id?200:201,{ id:id || Number(r.lastInsertRowid) });
+      const createdId=id || Number(r.lastInsertRowid);
+      return json(res,id?200:201,{ id:createdId,...(table==='clients'&&!id?{installation_token:collectors.createClientKey(createdId)}:{}) });
     }
     fail(405,'Método não permitido.');
   } catch (error) {

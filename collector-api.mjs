@@ -11,10 +11,35 @@ export function collectorAPI(db,{json,body}) {
  CREATE TABLE IF NOT EXISTS agent_batches(collector_id INTEGER REFERENCES collectors(id),batch_id TEXT NOT NULL,received_at TEXT DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(collector_id,batch_id));
  CREATE TABLE IF NOT EXISTS discoveries(id INTEGER PRIMARY KEY,collector_id INTEGER NOT NULL REFERENCES collectors(id),ip TEXT NOT NULL,manufacturer TEXT NOT NULL,model TEXT NOT NULL,serial TEXT NOT NULL,description TEXT NOT NULL,observed_at TEXT NOT NULL,first_seen TEXT NOT NULL,printer_id INTEGER REFERENCES printers(id) ON DELETE SET NULL,total_pages INTEGER,supplies TEXT NOT NULL DEFAULT '[]',UNIQUE(collector_id,ip,serial));
  CREATE TABLE IF NOT EXISTS printer_readings(id INTEGER PRIMARY KEY,discovery_id INTEGER NOT NULL REFERENCES discoveries(id),observed_at TEXT NOT NULL,total_pages INTEGER,supplies TEXT NOT NULL,UNIQUE(discovery_id,observed_at));`);
+ if(!db.prepare('PRAGMA table_info(collectors)').all().some(c=>c.name==='installation_id'))db.exec('ALTER TABLE collectors ADD COLUMN installation_id TEXT');
+ db.exec(`CREATE UNIQUE INDEX IF NOT EXISTS collectors_installation ON collectors(installation_id);
+ CREATE TABLE IF NOT EXISTS client_installation_keys(client_id INTEGER PRIMARY KEY REFERENCES clients(id) ON DELETE CASCADE,token_hash TEXT UNIQUE NOT NULL,created_at TEXT NOT NULL,revoked INTEGER NOT NULL DEFAULT 0);`);
+ function createClientKey(client){const token=randomBytes(32).toString('hex');db.prepare('INSERT INTO client_installation_keys(client_id,token_hash,created_at,revoked) VALUES(?,?,?,0) ON CONFLICT(client_id) DO UPDATE SET token_hash=excluded.token_hash,created_at=excluded.created_at,revoked=0').run(client,digest(token),new Date().toISOString());return token;}
+ let enrollmentRequests=new Map();
  let requests=new Map();
  function listCollectors(){return db.prepare(`SELECT c.id,c.name,c.client_id,c.revoked,c.last_seen,c.last_scan,c.hostname,c.version,c.created_at,clients.name AS client_name FROM collectors c JOIN clients ON clients.id=c.client_id ORDER BY c.id DESC`).all();}
  function listDiscoveries(){return db.prepare(`SELECT d.*,c.client_id,c.name AS collector_name,c.revoked,clients.name AS client_name FROM discoveries d JOIN collectors c ON c.id=d.collector_id JOIN clients ON clients.id=c.client_id WHERE NOT EXISTS(SELECT 1 FROM discoveries newer WHERE newer.collector_id=d.collector_id AND newer.ip=d.ip AND (newer.observed_at>d.observed_at OR (newer.observed_at=d.observed_at AND newer.id>d.id))) ORDER BY d.observed_at DESC,d.id DESC`).all().map(d=>({...d,supplies:JSON.parse(d.supplies)}));}
  async function machine(req,res,path){
+  if(path==='/api/agent/enroll'){
+   if(req.method!=='POST')reject(405,'Método não permitido.');
+   if(!req.headers['content-type']?.startsWith('application/json'))reject(415,'Use JSON.');
+   const now=Date.now();for(const [key,value] of enrollmentRequests)if(value.until<now)enrollmentRequests.delete(key);
+   const address=req.socket.remoteAddress,rate=enrollmentRequests.get(address)||{count:0,until:now+60000};rate.count++;if(enrollmentRequests.size>10000||rate.count>30)reject(429,'Aguarde antes de tentar novamente.');enrollmentRequests.set(address,rate);
+   const token=/^Bearer ([a-f0-9]{64})$/.exec(req.headers.authorization||'')?.[1];
+   const key=token&&db.prepare('SELECT k.client_id,c.name FROM client_installation_keys k JOIN clients c ON c.id=k.client_id WHERE k.token_hash=? AND k.revoked=0').get(digest(token));
+   if(!key)reject(401,'Token de instalação do cliente inválido ou desativado.');
+   const b=await body(req);const id=b.installation_id,operational=b.device_token,name=clean(b.name,200),hostname=clean(b.hostname,200);
+   if(typeof id!=='string'||!/^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$/.test(id)||!name||!hostname||typeof operational!=='string'||!/^[a-f0-9]{64}$/.test(operational))reject(400,'Identificação da instalação inválida.');
+   const existing=db.prepare('SELECT * FROM collectors WHERE installation_id=?').get(id);
+   if(existing){
+    if(existing.client_id!==key.client_id||existing.token_hash!==digest(operational))reject(409,'Esta instalação já está vinculada a outra conta ou credencial.');
+    if(existing.revoked)reject(403,'Este PC foi revogado. Solicite autorização ao administrador.');
+    db.prepare('UPDATE collectors SET name=?,hostname=? WHERE id=?').run(name,hostname,existing.id);
+    json(res,200,{ok:true,collector_id:existing.id,client_id:key.client_id,client_name:key.name});return true;
+   }
+   const result=db.prepare('INSERT INTO collectors(client_id,name,hostname,token_hash,installation_id) VALUES(?,?,?,?,?)').run(key.client_id,name,hostname,digest(operational),id);
+   json(res,201,{ok:true,collector_id:Number(result.lastInsertRowid),client_id:key.client_id,client_name:key.name});return true;
+  }
   if(path!=='/api/agent/report')return false;
   if(req.method!=='POST')reject(405,'Método não permitido.');
   if(!req.headers['content-type']?.startsWith('application/json'))reject(415,'Use JSON.');
@@ -55,6 +80,13 @@ export function collectorAPI(db,{json,body}) {
   json(res,200,{ok:true,accepted:printers.length});return true;
  }
  async function admin(req,res,path){
+  if(path==='/api/client-installation-keys'&&req.method==='GET'){json(res,200,db.prepare('SELECT client_id,created_at,revoked FROM client_installation_keys').all());return true;}
+  const keyRoute=/^\/api\/clients\/(\d+)\/installation-key(?:\/(revoke))?$/.exec(path);
+  if(keyRoute&&req.method==='POST'){
+   const client=Number(keyRoute[1]),c=db.prepare('SELECT id,name FROM clients WHERE id=?').get(client);if(!c)reject(404,'Cliente não encontrado.');
+   if(keyRoute[2]){db.prepare('UPDATE client_installation_keys SET revoked=1 WHERE client_id=?').run(client);json(res,200,{ok:true});return true;}
+   json(res,201,{client_id:client,client_name:c.name,token:createClientKey(client)});return true;
+  }
   if(path==='/api/collectors'&&req.method==='GET'){json(res,200,listCollectors());return true;}
   if(path==='/api/discoveries'&&req.method==='GET'){json(res,200,listDiscoveries());return true;}
   if(path==='/api/collectors'&&req.method==='POST'){
@@ -85,5 +117,5 @@ export function collectorAPI(db,{json,body}) {
   if(history&&req.method==='GET'){json(res,200,db.prepare('SELECT observed_at,total_pages,supplies FROM printer_readings WHERE discovery_id=? ORDER BY observed_at DESC LIMIT 100').all(Number(history[1])).map(r=>({...r,supplies:JSON.parse(r.supplies)})));return true;}
   return false;
  }
- return {machine,admin};
+ return {machine,admin,createClientKey};
 }

@@ -1,4 +1,6 @@
-# Agente Dragon para Windows — piloto 0.2
+# Agente Dragon para Windows — instalação manual
+
+**O instalador EXE com token do cliente está documentado em [INSTALADOR-EXE.md](INSTALADOR-EXE.md).** Os passos abaixo descrevem a alternativa manual, com credencial individual por coletor. Não confunda essa credencial com o token compartilhado de instalação do cliente.
 
 O agente identifica impressoras de rede por SNMP v2c, guarda os relatórios em uma fila local e envia para o servidor Dragon. Não precisa instalar o servidor web em cada cliente: somente Node.js 24 e os arquivos do agente. Uma única máquina ligada por rede normalmente é suficiente.
 

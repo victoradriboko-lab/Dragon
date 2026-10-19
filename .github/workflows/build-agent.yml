@@ -1,0 +1,67 @@
+name: Gerar instalador Dragon Agent
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'agents/**'
+      - 'windows/**'
+      - 'scripts/build-agent.mjs'
+      - 'package*.json'
+      - '.github/workflows/build-agent.yml'
+permissions:
+  contents: write
+jobs:
+  windows-installer:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Gerar agente EXE sem dependência externa de Node.js
+        run: node scripts/build-agent.mjs
+      - name: Testar o executável gerado
+        shell: pwsh
+        run: |
+          $env:DRAGON_AGENT_BINARY = (Resolve-Path 'build/payload/DragonAgent.exe').Path
+          node --test tests/enrollment.test.mjs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Incluir licença do runtime
+        shell: pwsh
+        run: |
+          $v = node -p process.versions.node
+          Invoke-WebRequest "https://raw.githubusercontent.com/nodejs/node/v$v/LICENSE" -OutFile build/payload/NODE-LICENSE.txt
+      - name: Compilar instalador
+        shell: pwsh
+        run: |
+          $iscc = 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe'
+          if (-not (Test-Path $iscc)) { choco install innosetup -y --no-progress }
+          $version = node -p "require('./package.json').version"
+          & $iscc "/DAgentVersion=$version" windows/DragonAgent.iss
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Get-ChildItem build/installer/*.exe | ForEach-Object {
+            $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower()
+            "$hash  $($_.Name)" | Set-Content "$($_.FullName).sha256" -Encoding ascii
+          }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DragonAgent-Windows-x64
+          path: |
+            build/installer/*.exe
+            build/installer/*.sha256
+          if-no-files-found: error
+      - name: Publicar versão piloto
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          $version = node -p "require('./package.json').version"
+          $tag = "agent-v$version"
+          gh release view $tag *> $null
+          if ($LASTEXITCODE -eq 0) { throw 'Esta versão já foi publicada. Incremente a versão antes de publicar outro instalador.' }
+          gh release create $tag build/installer/*.exe build/installer/*.sha256 --target '${{ github.sha }}' --prerelease --title "Dragon Agent $version - instalador Windows" --notes 'Instalador x64 com token do cliente, identidade individual por PC e runtime embutido. Consulte docs/INSTALADOR-EXE.md. Versão piloto sem assinatura Authenticode; valide primeiro em um PC de teste.'
