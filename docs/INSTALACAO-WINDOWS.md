@@ -4,7 +4,7 @@
 
 Aplicação web local com login, cadastro, edição, busca e exclusão de clientes e impressoras, e painel com totais reais. Os dados e sessões persistem em SQLite no servidor. Não há dependências npm externas.
 
-Esta primeira versão usa SQLite para simplificar a instalação. PostgreSQL é uma evolução possível, ainda não implementada. Não existe coletor SNMP, contrato, faturamento ou leitura automática nesta versão. O layout anterior continua em `dist/index.html` como referência visual; o sistema funcional é iniciado por `server.mjs`.
+Esta primeira versão usa SQLite para simplificar a instalação. PostgreSQL é uma evolução possível, ainda não implementada. A coleta SNMP está disponível por meio do [agente Windows](AGENTE-WINDOWS.md). Contratos e faturamento ainda não estão disponíveis. O layout anterior continua em `dist/index.html` como referência visual; o sistema funcional é iniciado por `server.mjs`.
 
 ## Instalar e abrir no servidor
 
@@ -65,7 +65,7 @@ $env:DRAGON_SECURE_COOKIE = '1'
 npm start
 ```
 
-A configuração do IIS, DNS e certificado depende do servidor e não é feita automaticamente por este projeto. Não publique a porta 3080 na internet. O acesso dos futuros coletores externos será definido na etapa da integração.
+A configuração do IIS, DNS e certificado depende do servidor e não é feita automaticamente por este projeto. Não publique a porta 3080 na internet. Para os agentes externos, use HTTPS com certificado confiável ou acesso por VPN, conforme o guia do agente.
 
 ## Iniciar junto com o Windows
 
@@ -94,4 +94,4 @@ Antes de atualizar o código, faça backup e pare a aplicação. Preserve a past
 npm test
 ```
 
-Os testes usam um banco temporário isolado e verificam login, proteção contra pedidos de outra origem, cadastros, vínculo de impressoras e persistência após reinício. A instalação no Windows Server, IIS e impressoras reais ainda exige validação no seu ambiente. Redefinição de senha, permissões por usuário, auditoria e coletor são próximos desenvolvimentos.
+Os testes usam um banco temporário isolado e verificam login, proteção contra pedidos de outra origem, cadastros, vínculo de impressoras e persistência após reinício. A instalação no Windows Server, IIS e impressoras reais ainda exige validação no seu ambiente. Redefinição de senha, permissões por usuário e auditoria são próximos desenvolvimentos. O agente é instalado separadamente conforme AGENTE-WINDOWS.md.
