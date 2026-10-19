@@ -1,4 +1,5 @@
 import http from 'node:http';
+import { collectorAPI } from './collector-api.mjs';
 import { DatabaseSync } from 'node:sqlite';
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { mkdirSync, readFileSync } from 'node:fs';
@@ -37,9 +38,9 @@ function json(res, status, body, headers = {}) {
   res.end(JSON.stringify(body));
 }
 function fail(status, message) { throw Object.assign(new Error(message), { status }); }
-async function body(req) {
+async function body(req,limit=16384) {
   let value = '';
-  for await (const chunk of req) { value += chunk; if (Buffer.byteLength(value) > 16384) fail(413, 'Pedido muito grande.'); }
+  for await (const chunk of req) { value += chunk; if (Buffer.byteLength(value) > limit) fail(413, 'Pedido muito grande.'); }
   try { const parsed = JSON.parse(value); if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw Error(); return parsed; } catch { fail(400, 'Dados inválidos.'); }
 }
 function text(v, name, required = false) {
@@ -56,6 +57,7 @@ function fields(table, value) {
   }
   return { names, result };
 }
+const collectors = collectorAPI(db,{json,body});
 const cookie = token => `dragon_session=${token}; HttpOnly; SameSite=Strict; Path=/; Max-Age=28800${secure ? '; Secure' : ''}`;
 const server = http.createServer(async (req, res) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -71,6 +73,7 @@ const server = http.createServer(async (req, res) => {
       res.writeHead(200, { 'Content-Type': path.endsWith('.js') ? 'text/javascript; charset=utf-8' : path.endsWith('.css') ? 'text/css; charset=utf-8' : 'text/html; charset=utf-8', 'Cache-Control': 'no-cache' });
       return res.end(readFileSync(join(root, 'public', files[path])));
     }
+    if (await collectors.machine(req,res,path)) return;
     if (!['GET','POST','PUT','DELETE'].includes(req.method)) fail(405, 'Método não permitido.');
     if (req.method !== 'GET') {
       const expected = configuredOrigin || `${secure ? 'https' : 'http'}://${req.headers.host}`;
@@ -100,9 +103,10 @@ const server = http.createServer(async (req, res) => {
     const session = token && db.prepare('SELECT sessions.*,users.email FROM sessions JOIN users ON users.id=sessions.user_id WHERE token=? AND expires>?').get(token,Date.now());
     if (!session) fail(401,'Faça login para continuar.');
     if (req.method !== 'GET' && req.headers['x-csrf-token'] !== session.csrf) fail(403,'Sessão inválida. Entre novamente.');
+    if (await collectors.admin(req,res,path)) return;
     if (path === '/api/session' && req.method === 'GET') return json(res,200,{ email:session.email,csrf:session.csrf });
     if (path === '/api/logout' && req.method === 'POST') { db.prepare('DELETE FROM sessions WHERE token=?').run(token); return json(res,200,{ ok:true },{'Set-Cookie':'dragon_session=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0'}); }
-    if (path === '/api/dashboard' && req.method === 'GET') return json(res,200,{ clients:db.prepare('SELECT count(*) AS n FROM clients').get().n, printers:db.prepare('SELECT count(*) AS n FROM printers').get().n, collectors:0 });
+    if (path === '/api/dashboard' && req.method === 'GET') return json(res,200,{ clients:db.prepare('SELECT count(*) AS n FROM clients').get().n, printers:db.prepare('SELECT count(*) AS n FROM printers').get().n, collectors:db.prepare('SELECT count(*) AS n FROM collectors WHERE revoked=0').get().n });
     const match = /^\/api\/(clients|printers)(?:\/(\d+))?$/.exec(path);
     if (!match) fail(404,'Recurso não encontrado.');
     const table = match[1], id = match[2] ? Number(match[2]) : null;
@@ -116,7 +120,7 @@ const server = http.createServer(async (req, res) => {
     }
     fail(405,'Método não permitido.');
   } catch (error) {
-    if (error.code === 'ERR_SQLITE_ERROR' && /constraint/i.test(error.message)) return json(res,409,{ error:/FOREIGN KEY/.test(error.message)?'O cliente possui impressoras vinculadas. Transfira ou exclua os equipamentos primeiro.':'Já existe uma impressora com este número de série.' });
+    if (error.code === 'ERR_SQLITE_ERROR' && /constraint/i.test(error.message)) return json(res,409,{ error:/FOREIGN KEY/.test(error.message)?'O cadastro possui impressoras ou coletores vinculados. Verifique os vínculos antes de excluir.':'Já existe uma impressora com este número de série.' });
     if (!error.status) console.error('Erro interno:', error.code || error.name);
     json(res,error.status || 500,{ error:error.status ? error.message : 'Não foi possível concluir a operação.' });
   }
